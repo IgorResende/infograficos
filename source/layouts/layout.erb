@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <title><%= data.page.title %></title>
-  </head>
-  <body class="<%= page_classes %>">
-    <%= yield %>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title><%= data.page.title %></title>
+  <%= partial "meta-social" %>
+  <%= favicon_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag 'styles', media: "all" %>
+</head>
+<body class="<%= page_classes %>">
+  <%= yield %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <%= javascript_include_tag  "scripts" %>
+</body>
 </html>
