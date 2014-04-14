@@ -15,3 +15,15 @@
   -webkit-font-smoothing: $value
   -moz-font-smoothing: $value
   font-smoothing: $value
+
+=size($width, $height)
+  width: $width
+  height: $height
+
+=square($size)
+  +size($size, $size)
+
+=circle($size)
+  +square($size)
+  +border-radius($size)
+
