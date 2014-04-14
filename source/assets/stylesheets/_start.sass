@@ -1,0 +1,96 @@
+#start
+  background-image: url("../images/layout/start.png")
+  background-color: #fff
+  background-position: center top
+  height: 700px
+  width: 1200px
+  .title
+    position: absolute
+    top: 63px
+    left: 14px
+    letter-spacing: -2px
+    width: 370px
+    h1
+      font-family: Museo500Regular
+      text-transform: uppercase
+      font-size: 48px
+    p
+      font-family: Museo300Regular
+      font-size: 24px
+      color: red
+      letter-spacing: .8px
+      line-height: 26px
+  #itaquerao
+    +size(960px, 360px)
+    background-image: url("../images/start/itaquerao.png")
+    position: absolute
+    top: 164px
+    left: 118px
+  #data-points
+    div
+      +circle(30px)
+      border: 8px solid rgba(255, 255, 255, .5)
+      background-color: red
+      position: absolute
+      &#dataPoint1
+        top: 485px
+        left: 135px
+      &#dataPoint2
+        top: 395px
+        left: 285px
+      &#dataPoint3
+        top: 310px
+        left: 385px
+      &#dataPoint4
+        top: 300px
+        left: 635px
+      &#dataPoint5
+        top: 405px
+        left: 635px
+      &#dataPoint6
+        top: 255px
+        left: 685px
+      &#dataPoint7
+        top: 365px
+        left: 685px
+      &#dataPoint8
+        top: 375px
+        left: 835px
+      &#dataPoint9
+        top: 205px
+        left: 1035px
+  #menu
+    text-transform: uppercase
+    font-size: 28px
+    position: absolute
+    top: 560px
+    left: 0
+    width: 100%
+    text-align: center
+    font-family: Museo700Regular
+    ul
+      list-style: none
+    li
+      display: inline-block
+      width: 24%
+      height: 80px
+      position: relative
+      &:before
+        content: "{"
+        font-size: 96px
+        position: absolute
+        top: -8px
+        left: 8px
+      &:after
+        content: "}"
+        font-size: 96px
+        position: absolute
+        top: -8px
+        right: 8px
+    a
+      display: block
+      text-decoration: none
+      padding-top: 16px
+    span
+      display: block
+      font-size: 18px
