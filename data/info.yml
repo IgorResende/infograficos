@@ -1,0 +1,66 @@
+start:
+  title: "Itaquerão"
+  desc: "Conheça o palco da abertura da Copa do Mundo  de 2014"
+  sections:
+    east_building:
+      label: "Explorar o prédio leste"
+    cabins:
+      label: "Camarotes"
+    west_building:
+      label: "Explorar o prédio oeste"
+  menu:
+    -
+      title: "Os números"
+      desc: "Sobre o estádio"
+    -
+      title: "Compare"
+      desc: "Outros estádios"
+    -
+      title: "A obra"
+      desc: "Sobre o estádio"
+    -
+      title: "Curiosidades"
+      desc: "Sobre o estádio"
+
+east_building:
+  title: "O prédio leste"
+  desc: "Conheça o interior do prédio leste do estádio"
+
+west_building:
+  title: "O prédio oeste"
+  desc: "Conheça o interior do prédio oeste do estádio"
+
+lockers:
+  title: "Os vestiários"
+  desc: ""
+
+screen:
+  title: "O telão"
+  desc: ""
+
+comparative:
+  title: "Comparativo"
+  desc: ""
+
+about:
+  title: "Uma grande obra"
+  desc: "Alguns detalhes sobre as obras e construção"
+
+numbers:
+  title: "O Itaquerão em números"
+  desc: "etc etc"
+
+controversies:
+  title: "Polêmicas"
+  desc: "Entenda os lances mais polêmicos dessa mega obra"
+
+curiosities:
+  title: "Curiosidades"
+  desc: "etc etc"
+
+vote:
+  title: "Dê sua nota"
+  desc: "Qual nota você dá para o Itaqueirão?"
+
+
+
