@@ -79,5 +79,8 @@ end
 
 activate :deploy do |deploy|
   deploy.method = :git
-  deploy.build_before = true
+  # Optional Settings
+  deploy.remote   = "static" # remote name or git url, default: origin
+  deploy.branch   = "master"
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
 end
