@@ -41,11 +41,15 @@
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+
+  def sub_pages(dir)
+    sitemap.resources.select do |resource|
+      resource.path.start_with?(dir)
+    end
+  end
+
+end
 
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
@@ -53,6 +57,7 @@ set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
 
 activate :directory_indexes
+# activate :asset_hash
 
 # Build-specific configuration
 configure :build do
@@ -80,7 +85,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   # Optional Settings
-  deploy.remote   = "static" # remote name or git url, default: origin
-  deploy.branch   = "master"
+  # deploy.remote   = "static" # remote name or git url, default: origin
+  # deploy.branch   = "master"
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
 end
