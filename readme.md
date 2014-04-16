@@ -20,9 +20,9 @@ Depois, acesse localmente em [http://0.0.0.0:4567/](http://0.0.0.0:4567/)
 .
 ├──── build = arquivos estáticos gerados pelo middleman, de todos os gráficos
 │
-├──┰─ data  = arquivos .yml com dados de cada infográfico
-│  ├─ nome-do-infografico-1.yml
-│  └─ nome-do-infografico-2.yml
+├──── data  = arquivos .yml com dados de cada infográfico
+│     ├─ nome-do-infografico-1.yml
+│     └─ nome-do-infografico-2.yml
 │
 ├──── source
 │     ├─ assets
