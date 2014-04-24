@@ -1,37 +1,38 @@
 <div id="start" class="section">
-  <div class="title">
-    <h1>
-      <%= data.info.start.title %>
-    </h1>
-    <p>
-      <%= data.info.start.desc %>
-    </p>
+  <div class="container">
+    <div class="title">
+      <h1>
+        <%= data.info.start.title %>
+      </h1>
+      <p>
+        <%= data.info.start.desc %>
+      </p>
+    </div>
+    <div id="itaquerao"></div>
+    <div id="data-points">
+      <div id="dataPoint1"></div>
+      <div id="dataPoint2"></div>
+      <div id="dataPoint3"></div>
+      <div id="dataPoint4"></div>
+      <div id="dataPoint5"></div>
+      <div id="dataPoint6"></div>
+      <div id="dataPoint7"></div>
+      <div id="dataPoint8"></div>
+      <div id="dataPoint9"></div>
+    </div>
+    <div id="menu">
+      <ul>
+      <% data.info.start.menu.each do |menu| %>
+        <li>
+          <a href="#">
+            <%= menu.title %>
+            <span>
+              <%= menu.desc %>
+            </span>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </div>
-  <div id="itaquerao"></div>
-  <div id="data-points">
-    <div id="dataPoint1"></div>
-    <div id="dataPoint2"></div>
-    <div id="dataPoint3"></div>
-    <div id="dataPoint4"></div>
-    <div id="dataPoint5"></div>
-    <div id="dataPoint6"></div>
-    <div id="dataPoint7"></div>
-    <div id="dataPoint8"></div>
-    <div id="dataPoint9"></div>
-  </div>
-  <div id="menu">
-    <ul>
-    <% data.info.start.menu.each do |menu| %>
-      <li>
-        <a href="#">
-          <%= menu.title %>
-          <span>
-            <%= menu.desc %>
-          </span>
-        </a>
-      </li>
-    <% end %>
-    </ul>
-  </div>
-
 </div>
