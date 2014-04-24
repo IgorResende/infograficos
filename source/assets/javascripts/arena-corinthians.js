@@ -1,0 +1,1 @@
+//= require arena-corinthians/init
