@@ -1,6 +1,6 @@
 #start
-  background-image: url("../images/arena-corinthians/layout/start.png")
-  // background-image: url("../images/arena-corinthians/start/arena-corinthians.png")
+  // background-image: url("../images/arena-corinthians/layout/start.png")
+  background-image: url("../images/arena-corinthians/start/arena-corinthians.png")
   background-color: #fff
 
   .title
@@ -9,12 +9,26 @@
     p
       color: $color-black
 
-  #arena-corinthians
-    +size(598px, 315px)
-    background-image: url("../images/arena-corinthians/start/arena-corinthians.png")
+  .arena-hover
+    +single-transition(all, .2s, linear)
     position: absolute
-    top: 164px
-    left: 118px
+    opacity: 0
+    cursor: pointer
+    &:hover
+      opacity: 1
+
+  #arena-corinthians-leste
+    +size(598px, 315px)
+    background-image: url("../images/arena-corinthians/start/arena-corinthians-leste-hover.png")
+    top: 226px
+    left: 101px
+
+  #arena-corinthians-oeste
+    +size(632px, 261px)
+    background-image: url("../images/arena-corinthians/start/arena-corinthians-oeste-hover.png")
+    top: 166px
+    left: 466px
+
   #pontos
     li
       +circle(30px)
@@ -24,13 +38,7 @@
       background-color: rgba(255, 255, 255, .5)
       position: absolute
       cursor: pointer
-      &:hover
-        +box-shadow(0 0 3px #aaa)
-        +animation(pulse-point .5s infinite)
-        &:before
-          +circle(18px)
-          top: 6px
-          left: 6px
+      z-index: 1
       &:before
         +circle(14px)
         +single-transition(all, .1s, linear)
@@ -66,38 +74,88 @@
       &#ponto-9
         top: 205px
         left: 1035px
+      &:hover
+        +box-shadow(0 0 3px #aaa)
+        +animation(pulse-point .5s infinite)
+        z-index: 2
+        &:before
+          +circle(18px)
+          top: 6px
+          left: 6px
+        span
+          opacity: 1
+          top: -51px
+      span
+        +single-transition(all, .2s, linear)
+        opacity: 0
+        background: $color-purple
+        text-transform: uppercase
+        font-size: 18px
+        color: #fff
+        position: absolute
+        // top: -51px
+        top: -41px
+        left: -200%
+        line-height: 32px
+        padding: 0 30px
+        border-radius: 6px
+        &:before
+          +square(0)
+          content: ""
+          font-family: Museo500Regular
+          border: 10px solid transparent
+          border-color: $color-purple transparent transparent transparent
+          position: absolute
+          left: calc(50% - 20px)
+          bottom: -20px
+
   #menu
     text-transform: uppercase
     font-size: 28px
     position: absolute
     top: 560px
-    left: 0
+    left: 15px
     width: 100%
     text-align: center
     font-family: Museo700Regular
     ul
       list-style: none
     li
-      display: inline-block
-      width: 24%
+      display: block
+      width: ($column * 3) - $gutter
+      margin-right: $gutter
       height: 80px
       position: relative
+      float: left
+      &:hover
+        &:before
+          color: $color-purple
+          left: 10px
+        &:after
+          color: $color-purple
+          right: 10px
       &:before
+        +single-transition(all, .2s, linear)
         content: "{"
         font-size: 96px
         position: absolute
         top: -8px
-        left: 8px
+        left: 0px
+        color: $color-gray-light
       &:after
+        +single-transition(all, .2s, linear)
         content: "}"
         font-size: 96px
         position: absolute
         top: -8px
-        right: 8px
+        right: 0px
+        color: $color-gray-light
     a
       display: block
       text-decoration: none
       padding-top: 16px
+      color: $color-purple
     span
       display: block
       font-size: 18px
+      color: $color-gray
