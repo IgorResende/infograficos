@@ -16,21 +16,44 @@ Depois, acesse localmente em [http://0.0.0.0:4567/](http://0.0.0.0:4567/)
 
 ### Estrutura
 
-```
-- build = arquivos estáticos gerados pelo middleman
-- data  = arquivos .yml com dados de cada infográfico
-  = [nome-do-infografico].yml
-- source
-  - assets
-    - fonts
-    - images
-      - [nome-do-infografico] = imagens de um dos infográficos
-    - javascripts
-      - [nome-do-infografico] = scripts de um dos infográficos
-    - stylesheets
-      - [nome-do-infografico] = css de um dos infográficos
-  - [nome-do-infografico]  = markup de um dos infográficos
-  - layouts
+```yml
+.
+├──── build = arquivos estáticos gerados pelo middleman, de todos os gráficos
+│
+├──── data  = arquivos .yml com dados de cada infográfico
+│     ├─ nome-do-infografico-1.yml
+│     └─ nome-do-infografico-2.yml
+│
+├──── source
+│     ├─ assets
+│     │  ├─── fonts = fontes usadas pelos infográficos
+│     │  │
+│     │  ├─┰─ images
+│     │  │ ├─ nome-do-infografico-1 = imagens de um dos infográfico 1
+│     │  │ ├─ nome-do-infografico-2 = imagens de um dos infográfico 2
+│     │  │ └─ ...
+│     │  │
+│     │  ├─ javascripts
+│     │  │  ├─ nome-do-infografico-1 = scripts de um dos infográfico 1
+│     │  │  ├─ nome-do-infografico-2 = scripts de um dos infográfico 2
+│     │  │  ├─ ...
+│     │  │  │─ nome-do-infografico-1.js = script do infográfico 1, importa todos da pasta correspondente
+│     │  │  └─ nome-do-infografico-2.js = script do infográfico 2, importa todos da pasta correspondente
+│     │  │
+│     │  └─ stylesheets
+│     │     ├─ nome-do-infografico-1 = sass partials de um dos infográfico 1
+│     │     ├─ nome-do-infografico-2 = sass partials de um dos infográfico 2
+│     │     ├─ ...
+│     │     │─ nome-do-infografico-1.css = estilo do infográfico 1, importa todos da pasta correspondente
+│     │     └─ nome-do-infografico-2.css = estilo do infográfico 2, importa todos da pasta correspondente
+│     │
+│     ├─ nome-do-infografico-1  = markup de um dos infográfico-1
+│     ├─ nome-do-infografico-2  = markup de um dos infográfico-2
+│     ├─ ...
+│     ├─ index.html.erb = lista de todos infográficos
+│     │
+│     └─ layouts = estrutura HTML base para todos infográficos
+│
 ```
 
 ## Deploy
