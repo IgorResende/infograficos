@@ -58,6 +58,7 @@ set :fonts_dir, 'assets/fonts'
 
 activate :directory_indexes
 # activate :asset_hash
+set :relative_links, true
 
 # Build-specific configuration
 configure :build do
