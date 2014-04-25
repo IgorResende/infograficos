@@ -1,2 +1,91 @@
 #lockers
-  background-image: url("../images/arena-corinthians/layout/lockers.png")
+  // background-image: url("../images/arena-corinthians/layout/lockers.png")
+  background-image: url("../images/arena-corinthians/lockers/lockers-bg.png")
+
+  .title
+    h1
+      color: #fff
+
+  #locker-details
+    list-style: none
+    width: $column * 4 - $gutter
+    position: absolute
+    top: 192px
+    left: 15px
+    li
+      color: #fff
+      width: 100%
+      margin-bottom: 21px
+      h4
+        font-size: 24px
+        font-family: Museo700Regular
+        text-transform: uppercase
+        font-weight: normal
+        letter-spacing: .8px
+      p
+        font-family: Museo300Regular
+        font-size: 14px
+        line-height: 17px
+
+  #locker-image
+    position: absolute
+    top: 166px
+    left: $column * 4 + 15
+    width: ($column * 6 - $gutter)
+    height: 370px
+    opacity: .7
+    img
+      display: block
+      width: ($column * 6 - $gutter)
+      height: 370px
+    p
+      position: absolute
+      bottom: 0
+      left: 0
+      padding: 13px
+      font-family: Museo300Regular
+      font-size: 14px
+      line-height: 17px
+      color: #fff
+      background-color: rgba(0, 0, 0, .5)
+
+  #locker-image-thumbs
+    position: absolute
+    top: 166px
+    left: $column * 10 + 15
+    width: ($column * 2 - $gutter)
+    height: 370px
+    .locker-image-nav
+      display: block
+      background-color: transparent
+      opacity: .5
+      border: none
+      width: ($column * 2 - $gutter)
+      height: $gutter
+      position: absolute
+      left: 0
+      background-repeat: no-repeat
+      text-indent: -300px
+      overflow: hidden
+      cursor: pointer
+      &.locker-image-nav-prev
+        top: -$gutter
+        background-image: url("../images/arena-corinthians/lockers/locker-image-nav-prev.png")
+        background-position: top center
+      &.locker-image-nav-next
+        bottom: -$gutter
+        background-image: url("../images/arena-corinthians/lockers/locker-image-nav-next.png")
+        background-position: bottom center
+    ul
+      display: block
+      width: ($column * 2 - $gutter)
+    li
+      display: block
+      width: ($column * 2 - $gutter)
+      height: 170px
+      margin-bottom: $gutter
+    img
+      display: block
+      width: ($column * 2 - $gutter)
+      height: 170px
+
