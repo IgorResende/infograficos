@@ -52,14 +52,22 @@ body
   display: block
   // position: relative
   counter-reset: counter-item
+  &:hover
+    li
+      &:before
+        opacity: .4
+      &:hover
+        &:before
+          opacity: 1
   li
     display: block
     width: $column * 3
     padding-right: $gutter
     float: left
-    margin-bottom: 22px
+    padding-bottom: 22px
     &:before
       +circle(33px)
+      +single-transition(opacity, .2s, linear)
       font-family: Museo700Regular
       background-color: $color-purple
       color: #fff
