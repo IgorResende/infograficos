@@ -1,3 +1,33 @@
 #east_building
-  background-image: url("../images/arena-corinthians/layout/east_building.png")
-  // background-color: #fff
+  // background-image: url("../images/arena-corinthians/layout/east_building.png")
+  background-color: #e9e7ed
+
+  #east_building-cut
+    +size(570px, 259px )
+    background-image: url("../images/arena-corinthians/east_building/east_building.png")
+    position: absolute
+    top: 239px
+    left: 15px
+
+  #east_building-info
+    position: absolute
+    top: 233px
+    left: $column * 6 + 15
+    li:nth-child(1):before
+      top: 6px
+      left: -377px
+    li:nth-child(2):before
+      top: 94px
+      left: -281px
+    li:nth-child(3):before
+      top: 182px
+      left: -131px
+    li:nth-child(4):before
+      top: 127px
+      left: -531px
+    li:nth-child(5):before
+      top: 145px
+      left: -331px
+    li:nth-child(6):before
+      top: 145px
+      left: -481px
