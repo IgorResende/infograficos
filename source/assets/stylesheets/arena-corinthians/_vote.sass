@@ -1,5 +1,5 @@
 #vote
-  background-image: url("../images/arena-corinthians/layout/vote.png")
+  // background-image: url("../images/arena-corinthians/layout/vote.png")
   background-color: #000
 
   .title
@@ -10,3 +10,43 @@
       color: #fff
     p
       color: #fff
+
+  #rating
+    width: 100%
+    position: absolute
+    top: 245px
+    left: 0
+    padding: 0 15px
+    text-align: center
+    &:hover
+      li
+        opacity: .5
+        &:hover
+          opacity: 1
+    li
+      +single-transition(all, .2s, linear)
+      list-style: none
+      display: inline-block
+      margin: 0 13px
+      color: red
+      font-size: 14px
+      line-height: 14px
+      color: #fff
+      a
+        +size(171px, 162px)
+        color: #fff
+        line-height: 171px
+        text-align: center
+        display: block
+        background-image: url("../images/arena-corinthians/vote/star.png")
+        font-size: 60px
+        font-family: Museo700Regular
+        text-decoration: none
+        margin-bottom: 27px
+      b
+        display: block
+        font-family: Museo700Regular
+        font-size: 24px
+        line-height: 24px
+        margin-bottom: 2px
+        color: $color-purple
