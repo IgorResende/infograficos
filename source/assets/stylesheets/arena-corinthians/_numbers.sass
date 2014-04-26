@@ -1,2 +1,33 @@
 #numbers
-  background-image: url("../images/arena-corinthians/layout/numbers.png")
+  // background-image: url("../images/arena-corinthians/layout/numbers.png")
+  background-color: #e9e7ed
+
+  #numbers-image
+    +size(845px, 463px)
+    background-image: url("../images/arena-corinthians/numbers/numbers-image.png")
+    position: absolute
+    top: 137px
+    left: 616px
+
+  #numbers-info
+    width: $column * 6
+    position: absolute
+    left: 15px
+    top: 229px
+    li
+      list-style: none
+      width: $column * 2
+      display: block
+      float: left
+      margin-bottom: 24px
+      padding-right: $gutter
+      color: $color-black
+      font-size: 18px
+      font-family: Museo300Regular
+      b
+        display: block
+        color: $color-purple
+        font-size: 32px
+        line-height: 33px
+        font-family: Museo700Regular
+        letter-spacing: -.8px
