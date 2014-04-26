@@ -4,4 +4,9 @@ source 'http://rubygems.org'
 
 gem "middleman", "~>3.0.14"
 gem "middleman-deploy"
+gem "middleman-minify-html"
+gem "middleman-imageoptim", "~> 0.1.4"
+
 gem "neat"
+gem 'therubyracer' # faster JS compiles
+gem 'oj' # faster JS compiles
