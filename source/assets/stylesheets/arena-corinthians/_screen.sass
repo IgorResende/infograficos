@@ -1,2 +1,61 @@
 #screen
-  background-image: url("../images/arena-corinthians/layout/screen.png")
+  // background-image: url("../images/arena-corinthians/layout/screen.png")
+  background-image: url("../images/arena-corinthians/screen/screen-bg.png")
+
+  .title
+    h1
+      color: #fff
+
+  #screen-image
+    +size(565px, 426px)
+    background-image: url("../images/arena-corinthians/screen/screen.png")
+    position: absolute
+    left: 0
+    top: 142px
+
+  #screen-schema
+    +size(570px, 97px)
+    background-image: url("../images/arena-corinthians/screen/screen-schema.png")
+    position: absolute
+    left: 616px
+    top: 298px
+
+  #screen-title
+    position: absolute
+    top: 166px
+    width: 565px
+    left: 617px
+    color: #fff
+    h3
+      font-size: 24px
+      font-family: Museo700Regular
+      text-transform: uppercase
+      letter-spacing: -.8px
+    p
+      font-size: 14px
+      font-family: Museo300Regular
+      line-height: 17px
+
+  #screen-infos
+    width: $column * 6
+    position: absolute
+    left: $column * 6 + 15px
+    top: 451px
+    color: #fff
+    ul
+      overflow: hidden
+    li
+      list-style: none
+      display: block
+      width: $column * 2
+      padding-right: $gutter
+      float: left
+      h4
+        font-size: 36px
+        font-family: Museo700Regular
+        letter-spacing: -.8px
+        white-space: nowrap
+      p
+        font-size: 14px
+        font-family: Museo300Regular
+        line-height: 17px
