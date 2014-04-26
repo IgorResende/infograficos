@@ -1,2 +1,39 @@
 #curiosities
-  background-image: url("../images/arena-corinthians/layout/curiosities.png")
+  // background-image: url("../images/arena-corinthians/layout/curiosities.png")
+  background-color: #e9e7ed
+
+  .title
+    color: $color-black
+
+  #curiosities-image
+    +size(787px, 427px)
+    background-image: url("../images/arena-corinthians/curiosities/curiosities-image.png")
+    position: absolute
+    top: 152px
+    left: -202px
+
+  #curiosities-info
+    display: block
+    position: absolute
+    top: 208px
+    left: $column * 6 + 15px
+    width: $column * 6
+    li
+      width:  $column * 3
+      padding-right: $gutter
+      margin-bottom: 22px
+      float: left
+      list-style: none
+      display: block
+      h5
+        font-size: 24px
+        font-family: Museo700Regular
+        text-transform: uppercase
+        font-weight: normal
+        letter-spacing: -.1px
+        color: $color-purple
+      p
+        font-family: Museo300Regular
+        font-size: 14px
+        line-height: 17px
+        color: $color-black
