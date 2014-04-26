@@ -57,7 +57,10 @@ set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
 
 activate :directory_indexes
-# activate :asset_hash
+activate :automatic_image_sizes
+activate :gzip
+activate :asset_hash
+# activate :imageoptim
 set :relative_links, true
 
 # Build-specific configuration
@@ -67,6 +70,8 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+
+  activate :minify_html
 
   # Enable cache buster
   # activate :cache_buster
