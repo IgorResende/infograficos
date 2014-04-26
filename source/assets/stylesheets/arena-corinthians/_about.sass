@@ -1,2 +1,39 @@
 #about
-  background-image: url("../images/arena-corinthians/layout/about.png")
+  // background-image: url("../images/arena-corinthians/layout/about.png")
+  background-image: url("../images/arena-corinthians/about/about-bg.png")
+
+  .title
+    color: #000
+
+  #workers-silhouette
+    +size(1038px, 474px)
+    background-image: url("../images/arena-corinthians/about/workers-silhouette.png")
+    position: absolute
+    top: 225px
+    left: -300px
+
+  #about-info
+    width: $column * 5
+    position: absolute
+    top: 210px
+    left: $column * 6 + 15px
+    ul
+      width: $column * 6
+      overflow: hidden
+    li
+      list-style: none
+      width: $column * 3
+      padding-right: $gutter
+      margin-bottom: 26px
+      float: left
+      display: block
+      color: #fff
+      h5
+        font-size: 24px
+        font-family: Museo700Regular
+        text-transform: uppercase
+        letter-spacing: -.8px
+      p
+        font-size: 14px
+        font-family: Museo300Regular
+        line-height: 17px
