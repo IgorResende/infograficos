@@ -87,18 +87,19 @@
           top: -51px
       span
         +single-transition(all, .2s, linear)
+        +transform(translateX(-50%))
         opacity: 0
         background: $color-purple
         text-transform: uppercase
         font-size: 18px
         color: #fff
         position: absolute
-        // top: -51px
         top: -41px
-        left: -200%
+        left: 15px
         line-height: 32px
         padding: 0 30px
         border-radius: 6px
+        white-space: nowrap
         &:before
           +square(0)
           content: ""
@@ -106,7 +107,7 @@
           border: 10px solid transparent
           border-color: $color-purple transparent transparent transparent
           position: absolute
-          left: calc(50% - 20px)
+          left: calc(50% - 10px)
           bottom: -20px
 
   #menu
