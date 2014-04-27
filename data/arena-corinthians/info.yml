@@ -1,3 +1,4 @@
+# Início
 start:
   title: "Arena Corinthians"
   desc: "Conheça o palco da abertura da <br> Copa do Mundo  de 2014"
@@ -8,6 +9,16 @@ start:
       label: "Camarotes"
     west_building:
       label: "Explorar o prédio oeste"
+  ponto:
+    um: "Estacionamento"
+    dois: "Telão"
+    tres: "Prédio Leste"
+    quatro: "Arquibancada"
+    cinco: "Gramado"
+    seis: "Camarotes"
+    sete: "Vestiários"
+    oito: "Arquibancada provisória"
+    nove: "Outro estacionamento"
   menu:
     -
       title: "Os números"
@@ -22,41 +33,316 @@ start:
       title: "Curiosidades"
       desc: "Sobre o estádio"
 
+#  Prédio leste
 east_building:
   title: "O prédio leste"
   desc: "Conheça o interior do prédio leste do estádio"
+  infos:
+    -
+      title: "1. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "2. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "3. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "4. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "5. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "6. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
 
+# Prédio Oeste
 west_building:
   title: "O prédio oeste"
   desc: "Conheça o interior do prédio oeste do estádio"
+  infos:
+    -
+      title: "1. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "2. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "3. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "4. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "5. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "6. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
 
+# Vestiários
 lockers:
   title: "Os vestiários"
   desc: ""
+  details:
+    -
+      title: "1. Cobertura"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+    -
+      title: "2. Outro detalhe"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+    -
+      title: "2. Mais um detalhe"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+  nav:
+    prev: "Anterior"
+    next: "Próxima"
+  images:
+    -
+      file_name: "vestiario-1.jpg"
+      desc: "A área de aquecimento prepara o clima da partida para os jogadores sem que eles fiquem expostos em campo, permitindo táticas ousadas para os técnicos."
+    -
+      file_name: "vestiario-2.jpg"
+      desc: "A área de aquecimento prepara o clima da partida para os jogadores sem que eles fiquem expostos em campo, permitindo táticas ousadas para os técnicos."
+    -
+      file_name: "vestiario-3.jpg"
+      desc: "A área de aquecimento prepara o clima da partida para os jogadores sem que eles fiquem expostos em campo, permitindo táticas ousadas para os técnicos."
 
+# Telão
 screen:
   title: "O telão"
   desc: ""
+  subtitle: "Um pequeno grande detalhe"
+  desc2: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. "
+  infos:
+    -
+      title: "3580 leds"
+      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
+    -
+      title: "3580 leds"
+      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
+    -
+      title: "3580 leds"
+      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
 
+# Comparativo
 comparative:
   title: "Comparativo"
   desc: ""
+  desc2: "Veja o comparativo de números entre alguns estádios brasileiros:"
+  table:
+    labels:
+      info1: "Capacidade"
+      info2: "Custo"
+      info3: "Area Construida"
+      info4: "Tamanho"
+    data:
+      -
+        name: "Arena Corinthians"
+        info1: "1"
+        info2: "2"
+        info3: "3"
+        info4: "4"
+      -
+        name: "Pacaembu"
+        info1: "5"
+        info2: "6"
+        info3: "7"
+        info4: "8"
+      -
+        name: "Maracanã"
+        info1: "9"
+        info2: "10"
+        info3: "11"
+        info4: "12"
+      -
+        name: "Morumbi"
+        info1: "13"
+        info2: "14"
+        info3: "15"
+        info4: "16"
+      -
+        name: "Alianz Arena"
+        info1: "17"
+        info2: "18"
+        info3: "19"
+        info4: "20"
 
+# Sobre a obra
 about:
   title: "Uma grande obra"
   desc: "Alguns detalhes sobre as obras e construção"
+  infos:
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+    -
+      title: "4382"
+      desc: "Homens trabalharam na durante todo o período da obra do estádio."
 
+# Números
 numbers:
   title: "O Itaquerão em números"
   desc: "etc etc"
+  infos:
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
+    -
+      title: "198.000m"
+      desc: "de área total"
 
+# Polemicas
 controversies:
   title: "Polêmicas"
   desc: "Entenda os lances mais polêmicos dessa mega obra"
+  infos:
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+    -
+      title: "Os custos da obra"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+    -
+      title: "Mais um detalhe"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+    -
+      title: "Mais um detalhe"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+  money:
+    title: "De onde veio essa grana?"
+    data:
+      -
+        width: "70%"
+        label: "21%"
+        value: "R$ 320.233,00"
+        desc: "Pagos pelo BNDS"
+      -
+        width: "60%"
+        label: "21%"
+        value: "R$ 320.233,00"
+        desc: "Pagos pelo Corinthians"
+      -
+        width: "80%"
+        label: "21%"
+        value: "R$ 320.233,00"
+        desc: "Financiados pela Caixa"
+  infos2:
+    title: "O que poderia ser feito?"
+    data:
+      -
+        quantity: "820"
+        desc: "aparelhos de raio-x"
+      -
+        quantity: "400"
+        desc: "escolas infantis"
+      -
+        quantity: "40km"
+        desc: "corredores de onibus"
+      -
+        quantity: "16"
+        desc: "hospitais"
+      -
+        quantity: "10.500"
+        desc: "casas populares"
 
+# Curiosidades
 curiosities:
   title: "Curiosidades"
   desc: "etc etc"
+  infos:
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+    -
+      title: "Acidentes"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+
+# Campo
+field:
+  title: "O Gramado"
+  desc: ""
+  infos:
+    -
+      title: "Gramado"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "Substrato"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "Drenagem"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "Escoamento"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "Saibro"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+    -
+      title: "Resfriamento"
+      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+
 
 vote:
   title: "Dê sua nota"
