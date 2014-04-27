@@ -2,39 +2,20 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.vote.title %>
+        <%= data.info.field.title %>
       </h1>
       <p>
-        <%= data.info.vote.desc %>
+        <%= data.info.field.desc %>
       </p>
     </div>
     <div id="field-image"></div>
     <ul id="field-info">
-      <li>
-        <h4>Gramado</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
-      <li>
-        <h4>Substrato</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
-      <li>
-        <h4>Drenagem</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
-      <li>
-        <h4>Escoamento</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
-      <li>
-        <h4>Saibro</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
-      <li>
-        <h4>Resfriamento</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado.</p>
-      </li>
+      <% data.info.field.infos.each do |info| %>
+        <li>
+          <h4><%= info.title %></h4>
+          <p><%= info.desc %></p>
+        </li>
+      <% end %>
     </ul>
-
   </div>
 </div>
