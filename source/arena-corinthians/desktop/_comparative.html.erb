@@ -9,59 +9,31 @@
       </p>
     </div>
     <div id="stadiuns">
-      <div id="stadiuns-text">Veja o comparativo de números entre alguns estádios brasileiros:</div>
+      <div id="stadiuns-text"><%= data.info.comparative.desc2 %></div>
       <ul id="stadiuns-list">
-        <li id="stadium-arena-corinthians">Arena Corinthians</li>
-        <li id="stadium-pacaembu">Pacaembu</li>
-        <li id="stadium-maracana">Maracanã</li>
-        <li id="stadium-morumbi">Morumbi</li>
-        <li id="stadium-alianz-arena">Alianz Arena</li>
+        <% data.info.comparative.table.data.each do |stadium| %>
+          <li id="stadium-<%= stadium.name.downcase.gsub(' ', '-') %>"></li>
+        <% end %>
       </ul>
     </div>
     <table id="comparative-table" border="0" cellpadding="0" cellspacing="0">
       <thead>
         <tr>
           <th></th>
-          <th>Arena Corinthians</th>
-          <th>Pacaembu</th>
-          <th>Maracanã</th>
-          <th>Morumbi</th>
-          <th>Alianz Arena</th>
+          <% data.info.comparative.table.data.each do |stadium| %>
+            <th><%= stadium.name %></th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th>Capacidade</th>
-          <td>65 mil pessoas (Copa)</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-        </tr>
-        <tr>
-          <th>Área construída</th>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-        </tr>
-        <tr>
-          <th>Área construída</th>
-          <td>130 km</td>
-          <td>130 km</td>
-          <td>130 km</td>
-          <td>130 km</td>
-          <td>130 km</td>
-        </tr>
-        <tr>
-          <th>Área construída</th>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-          <td>40x20 metros</td>
-        </tr>
+        <% data.info.comparative.table.labels.each do |key, label| %>
+          <tr>
+            <th><%= label.to_s %></th>
+            <% data.info.comparative.table.data.each do |stadium| %>
+            <td><%= stadium[key] %></td>
+            <% end %>
+          </tr>
+          <% end %>
       </tbody>
     </table>
   </div>
