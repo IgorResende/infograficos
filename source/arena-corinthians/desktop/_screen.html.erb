@@ -10,24 +10,18 @@
     </div>
     <div id="screen-image"></div>
     <div id="screen-title">
-      <h3>UM PEQUENO GRANDE DETALHE</h3>
-      <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. </p>
+      <h3><%= data.info.screen.subtitle %></h3>
+      <p><%= data.info.screen.desc2 %></p>
     </div>
     <div id="screen-schema"></div>
     <div id="screen-infos">
       <ul>
+        <% data.info.screen.infos.each do |info| %>
         <li>
-          <h4>3580 leds</h4>
-          <p>compôes a extensão do painel que mede cerca de 180x20 metros.</p>
+          <h4><%= info.title %></h4>
+          <p><%= info.desc %></p>
         </li>
-        <li>
-          <h4>3580 leds</h4>
-          <p>compôes a extensão do painel que mede cerca de 180x20 metros.</p>
-        </li>
-        <li>
-          <h4>3580 leds</h4>
-          <p>compôes a extensão do painel que mede cerca de 180x20 metros.</p>
-        </li>
+        <% end %>
       </ul>
     </div>
   </div>
