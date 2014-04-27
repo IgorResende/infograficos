@@ -9,45 +9,36 @@
       </p>
     </div>
     <ul id="controversies-info">
-      <li><h4>Acidentes</h4><p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite.</p></li>
-      <li><h4>Os custos da obra</h4><p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite.</p></li>
-      <li><h4>Mais um detalhe</h4><p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite.</p></li>
-      <li><h4>Mais um detalhe</h4><p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite.</p></li>
+      <% data.info.controversies.infos.each do |info| %>
+      <li>
+        <h4><%= info.title %></h4>
+        <p><%= info.desc %></p>
+      </li>
+      <% end %>
     </ul>
     <div id="controversies-money">
-      <h3>De onde veio essa grana?</h3>
+      <h3><%= data.info.controversies.money.title %></h3>
       <ul>
+        <% data.info.controversies.money.data.each do |info| %>
         <li>
-          <div>
-            <b>21%</b>
-            R$ 320.233,00
+          <div style="width:<%= info.width %>;">
+            <b><%= info.label %></b>
+            <%= info.value %>
           </div>
-          Pagos pelo BNDS
+          <%= info.desc %>
         </li>
-        <li>
-          <div>
-            <b>32%</b>
-            R$ 520.233,00
-          </div>
-          Pagos pelo Corinthians
-        </li>
-        <li>
-          <div>
-            <b>47%</b>
-            R$ 320.233,00
-          </div>
-          Financiados pela Caixa
-        </li>
+        <% end %>
       </ul>
     </div>
     <div id="controversies-info2">
-      <h3>O que poderia ser feito?</h3>
+    <h3><%= data.info.controversies.infos2.title %></h3>
       <ul>
-        <li><b>820</b> aparelhos de raio-x</li>
-        <li><b>400</b> escolas infantis</li>
-        <li><b>40km</b> corredores de onibus</li>
-        <li><b>16</b> hospitais</li>
-        <li><b>10.500</b> casas populares</li>
+        <% data.info.controversies.infos2.data.each do |info| %>
+        <li>
+          <b><%= info.quantity %></b>
+          <%= info.desc %>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div>
