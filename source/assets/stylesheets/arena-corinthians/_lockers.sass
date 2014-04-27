@@ -76,16 +76,24 @@
         bottom: -$gutter
         background-image: url("../images/arena-corinthians/lockers/locker-image-nav-next.png")
         background-position: bottom center
+    #locker-image-thumbs-container
+      width: ($column * 2 - $gutter)
+      height: 370px
+      overflow: hidden
     ul
       display: block
       width: ($column * 2 - $gutter)
+      margin-top: -200px
     li
       display: block
       width: ($column * 2 - $gutter)
       height: 170px
       margin-bottom: $gutter
-    img
-      display: block
-      width: ($column * 2 - $gutter)
-      height: 170px
+      img
+        display: block
+        width: ($column * 2 - $gutter)
+        height: 170px
+      span
+        display: none
+
 
