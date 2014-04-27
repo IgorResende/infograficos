@@ -1,0 +1,73 @@
+#field
+  // background-image: url("../images/arena-corinthians/layout/field.png")
+  background-image: url("../images/arena-corinthians/field/field-bg.png")
+  background-color: #e9e7ed
+
+  .title
+    h1
+      color: #fff
+
+  #field-image
+    +square(440px)
+    background-image: url("../images/arena-corinthians/field/field-image.png")
+    position: absolute
+    top: 132px
+    left: 15px
+
+  #field-info
+    width: $column * 6
+    position: absolute
+    top: 216px
+    left: $column * 6 + 15px
+    counter-reset: counter-item
+    &:hover
+      li
+        &:before
+          opacity: .4
+        &:hover
+          &:before
+            opacity: 1
+    li
+      list-style: none
+      display: block
+      width: $column * 3
+      padding-right: $gutter
+      float: left
+      color: #fff
+      margin-bottom: 22px
+      &:before
+        +circle(33px)
+        +single-transition(opacity, .2s, linear)
+        font-family: Museo700Regular
+        background-color: $color-purple
+        color: #fff
+        text-align: center
+        line-height: 33px
+        content: counter(counter-item)
+        counter-increment: counter-item
+        position: absolute
+        top: 0px
+        left: -394px
+      &:nth-child(1):before
+        top: 9px
+      &:nth-child(2):before
+        top: 77px
+      &:nth-child(3):before
+        top: 139px
+      &:nth-child(4):before
+        top: 168px
+        left: -246px
+      &:nth-child(5):before
+        top: 214px
+      &:nth-child(6):before
+        top: 291px
+      h4
+        font-size: 24px
+        font-family: Museo700Regular
+        text-transform: uppercase
+        letter-spacing: .8px
+      p
+        font-family: Museo300Regular
+        font-size: 14px
+        line-height: 17px
+
