@@ -9,30 +9,36 @@
       </p>
     </div>
     <ol id="locker-details">
+      <% data.info.lockers.details.each do |info| %>
       <li>
-        <h4>1. Cobertura</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos.</p>
+        <h4><%= info.title %></h4>
+        <p><%= info.desc %></p>
       </li>
-      <li>
-        <h4>2. Outro detalhe</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos.</p>
-      </li>
-      <li>
-        <h4>3. Mais um detalhe</h4>
-        <p>Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos.</p>
-      </li>
+      <% end %>
     </ol>
     <div id="locker-image">
-      <%= image_tag 'arena-corinthians/lockers/vestiario-1.jpg', size: "570x370" %>
-      <p>A área de aquecimento prepara o clima da partida para os jogadores sem que eles fiquem expostos em campo, permitindo táticas ousadas para os técnicos.</p>
+      <%= image_tag 'arena-corinthians/lockers/' + data.info.lockers.images.first.file_name, size: "570x370" %>
+      <p><%= data.info.lockers.images.first.desc %></p>
     </div>
     <div id="locker-image-thumbs">
-      <button class="locker-image-nav locker-image-nav-prev">Anterior</button>
-      <ul>
-        <li><%= image_tag 'arena-corinthians/lockers/vestiario-2-thumb.jpg', size: "170" %></li>
-        <li><%= image_tag 'arena-corinthians/lockers/vestiario-3-thumb.jpg', size: "170" %></li>
-      </ul>
-      <button class="locker-image-nav locker-image-nav-next">Próxima</button>
+      <button class="locker-image-nav locker-image-nav-prev" title="<%= data.info.lockers.nav.before %>">
+        <%= data.info.lockers.nav.before %>
+      </button>
+      <div id="locker-image-thumbs-container">
+        <ul>
+          <% data.info.lockers.images.each do |image| %>
+          <li>
+            <%= image_tag 'arena-corinthians/lockers/' + image.file_name, size: "170" %>
+            <span>
+              <%= image.desc %>
+            </span>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <button class="locker-image-nav locker-image-nav-next" title="<%= data.info.lockers.nav.next %>">
+        <%= data.info.lockers.nav.next %>
+      </button>
     </div>
   </div>
 </div>
