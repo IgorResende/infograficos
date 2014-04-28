@@ -2642,7 +2642,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   100% {
-    opacity: 0;
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
@@ -2656,7 +2656,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   100% {
-    opacity: 0;
+    opacity: 1;
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
