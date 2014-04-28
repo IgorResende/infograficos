@@ -1,6 +1,6 @@
-<div id="start" class="section">
+<div id="start" class="section animated fadeInUp">
   <div class="container">
-    <div class="title animated slideInLeft">
+    <div class="title">
       <h1>
         <%= data.info.start.title %>
       </h1>
@@ -10,29 +10,31 @@
     </div>
     <div id="arena-corinthians-oeste" class="arena-hover"></div>
     <div id="arena-corinthians-leste" class="arena-hover"></div>
-    <ul id="pontos" class="animated fadeIn">
-      <li id="ponto-1"><span><%= data.info.start.ponto.um %></span></li>
-      <li id="ponto-2"><span><%= data.info.start.ponto.dois %></span></li>
-      <li id="ponto-3"><span><%= data.info.start.ponto.tres %></span></li>
-      <li id="ponto-4"><span><%= data.info.start.ponto.quatro %></span></li>
-      <li id="ponto-5"><span><%= data.info.start.ponto.cinco %></span></li>
-      <li id="ponto-6"><span><%= data.info.start.ponto.seis %></span></li>
-      <li id="ponto-7"><span><%= data.info.start.ponto.sete %></span></li>
-      <li id="ponto-8"><span><%= data.info.start.ponto.oito %></span></li>
-      <li id="ponto-9"><span><%= data.info.start.ponto.nove %></span></li>
+    <ul id="pontos">
+      <li id="ponto-1" class="nav-section" data-section="east_building"><span><%= data.info.start.ponto.um %></span></li>
+      <li id="ponto-2" class="nav-section" data-section="west_building"><span><%= data.info.start.ponto.dois %></span></li>
+      <li id="ponto-3" class="nav-section" data-section="lockers"><span><%= data.info.start.ponto.tres %></span></li>
+      <li id="ponto-4" class="nav-section" data-section=""><span><%= data.info.start.ponto.quatro %></span></li>
+      <li id="ponto-5" class="nav-section" data-section=""><span><%= data.info.start.ponto.cinco %></span></li>
+      <li id="ponto-6" class="nav-section" data-section=""><span><%= data.info.start.ponto.seis %></span></li>
+      <li id="ponto-7" class="nav-section" data-section=""><span><%= data.info.start.ponto.sete %></span></li>
+      <li id="ponto-8" class="nav-section" data-section=""><span><%= data.info.start.ponto.oito %></span></li>
+      <li id="ponto-9" class="nav-section" data-section=""><span><%= data.info.start.ponto.nove %></span></li>
     </ul>
-    <div id="menu" class="animated slideInRight">
+    <div id="menu">
       <ul>
-      <% data.info.start.menu.each do |menu| %>
         <li>
-          <a href="#">
-            <%= menu.title %>
-            <span>
-              <%= menu.desc %>
-            </span>
-          </a>
+          <a href="#" class="nav-section" data-section="numbers"><%= data.info.start.menu.numbers.title %><span><%= data.info.start.menu.numbers.desc %></span></a>
         </li>
-      <% end %>
+        <li>
+          <a href="#" class="nav-section" data-section="comparative"><%= data.info.start.menu.comparative.title %><span><%= data.info.start.menu.comparative.desc %></span></a>
+        </li>
+        <li>
+          <a href="#" class="nav-section" data-section="about"><%= data.info.start.menu.about.title %><span><%= data.info.start.menu.about.desc %></span></a>
+        </li>
+        <li>
+          <a href="#" class="nav-section" data-section="curiosities"><%= data.info.start.menu.curiosities.title %><span><%= data.info.start.menu.curiosities.desc %></span></a>
+        </li>
       </ul>
     </div>
   </div>
