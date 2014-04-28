@@ -11,22 +11,29 @@ body
   font-family: 'Lato', sans-serif
   overflow-x: hidden
 
-.section
-  position: relative
-
 #infographic
   width: 100%
+  position: relative
+  height: 700px
+  overflow: hidden
 
 .section
+  position: relative
   background-color: #fff
   background-position: center top
   background-repeat: no-repeat
+  position: absolute
+  height: 700px
+  left: 0
+  width: 100%
+  top: 0
+  display: none
 
 .container
   height: 700px
   margin: 0 auto
   max-width: 1200px
-  outline: 1px solid red
+  // outline: 1px solid red
   padding: 60px 10px
   position: relative
 
@@ -49,6 +56,30 @@ body
     letter-spacing: -.2px
     line-height: 28px
     color: $color-black
+
+.all-back
+  background-color: transparent
+  background-image: url("../images/arena-corinthians/all/back.png")
+  background-position: 10px 10px
+  background-repeat: no-repeat
+  border: none
+  cursor: pointer
+  font-family: Museo300Regular
+  font-size: 18px
+  font-weight: bold
+  height: 60px
+  left: 5px
+  line-height: 60px
+  padding-left: 36px
+  position: absolute
+  text-align: left
+  text-transform: uppercase
+  top: 590px
+  width: 120px
+  color: #fff
+  &.dark
+    color: $color-black
+
 
 .list-info
   list-style: none
