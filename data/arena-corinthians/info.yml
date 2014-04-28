@@ -1,3 +1,7 @@
+# Geral
+all:
+  back: "Voltar"
+
 # Início
 start:
   title: "Arena Corinthians"
@@ -20,16 +24,16 @@ start:
     oito: "Arquibancada provisória"
     nove: "Outro estacionamento"
   menu:
-    -
+    numbers:
       title: "Os números"
       desc: "Sobre o estádio"
-    -
+    comparative:
       title: "Compare"
       desc: "Outros estádios"
-    -
+    about:
       title: "A obra"
       desc: "Sobre o estádio"
-    -
+    curiosities:
       title: "Curiosidades"
       desc: "Sobre o estádio"
 
