@@ -59,7 +59,7 @@ set :fonts_dir, 'assets/fonts'
 activate :directory_indexes
 activate :automatic_image_sizes
 activate :gzip
-activate :asset_hash
+# activate :asset_hash
 # activate :imageoptim
 set :relative_links, true
 
