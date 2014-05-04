@@ -14,7 +14,7 @@ start:
     west_building:
       label: "Explorar o prédio oeste"
   ponto:
-    um: "Estacionamento"
+    um: "Polêmicas"
     dois: "Telão"
     tres: "Prédio Leste"
     quatro: "Arquibancada"
@@ -266,17 +266,17 @@ controversies:
     title: "De onde veio essa grana?"
     data:
       -
-        width: "70%"
+        width: "70"
         label: "21%"
         value: "R$ 320.233,00"
         desc: "Pagos pelo BNDS"
       -
-        width: "60%"
+        width: "60"
         label: "21%"
         value: "R$ 320.233,00"
         desc: "Pagos pelo Corinthians"
       -
-        width: "80%"
+        width: "80"
         label: "21%"
         value: "R$ 320.233,00"
         desc: "Financiados pela Caixa"
