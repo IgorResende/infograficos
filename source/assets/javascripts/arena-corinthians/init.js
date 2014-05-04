@@ -247,13 +247,55 @@ var infografico = (function() {
   function controversies (enter) {
     var $controversies = $('#controversies');
     var $title = $('.title', $controversies);
-    var $cut = $('#controversies-cut', $controversies);
     var $info = $('#controversies-info', $controversies);
+    var $money = $('#controversies-money ul li', $controversies);
+    var $moneyTitle = $('#controversies-money h3', $controversies);
+    var $controversiesInfo2Title = $('#controversies-info2 h3', $controversies);
+    var $controversiesInfo2Itens = $('#controversies-info2 ul li', $controversies);
     if (enter) {
       $controversies.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
       $title.velocity({ opacity: 1 }, { duration: 500, delay: 1000 });
+      $info.velocity({ opacity: 1 }, { duration: 1000, delay: 1000 });
+      $moneyTitle.velocity({ opacity: 1 }, { duration: 1000, delay: 1000 });
+      $money.each(function (i, e) {
+        var delay = 200 * i;
+        var $e = $(e);
+        var $divPercent = $e.find('div');
+        var valPercent = $divPercent.data('width');
+        var $num = $e.find('b');
+        var $txtIn = $e.find('.inside-text');
+        var $txtOut = $e.find('.outside-text');
+        $divPercent.velocity({ opacity: 1, width: valPercent+'%' }, { duration: 500, delay: 1000 + delay});
+        $num.velocity({ opacity: 1 }, { duration: 500, delay: 1500 + delay});
+        $txtIn.velocity({ opacity: 1 }, { duration: 500, delay: 1700 + delay });
+        $txtOut.velocity({ opacity: 1 }, { duration: 500, delay: 1900 + delay });
+      });
+      $controversiesInfo2Title.velocity({ opacity: 1 }, { duration: 1000, delay: 1500 });
+      $controversiesInfo2Itens.each(function (i, e) {
+        var delay = 200 * i;
+        $controversiesInfo2Itens.eq(i).velocity({ opacity: 1 }, { duration: 500, delay: 1500 + delay});
+      })
       openSection = 'controversies';
     } else {
+      $controversiesInfo2Itens.reverse().each(function (i, e) {
+        var delay = 200 * i;
+        $controversiesInfo2Itens.eq(i).velocity({ opacity: 0 }, { duration: 500, delay: 300 + delay});
+      })
+      $controversiesInfo2Title.velocity({ opacity: 0 }, { duration: 1000, delay: 600 });
+      $money.each(function (i, e) {
+        var $e = $(e);
+        var $divPercent = $e.find('div');
+        var valPercent = $divPercent.data('width');
+        var $num = $e.find('b');
+        var $txtIn = $e.find('.inside-text');
+        var $txtOut = $e.find('.outside-text');
+        $num.velocity({ opacity: 0 }, { duration: 500, delay: 0});
+        $txtIn.velocity({ opacity: 0 }, { duration: 500, delay: 0});
+        $txtOut.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
+        $divPercent.velocity({ opacity: 0, width: 0 }, { duration: 500, delay:500});
+      });
+      $moneyTitle.velocity({ opacity: 0 }, { duration: 1000, delay: 500 });
+      $info.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
       $title.velocity({ opacity: 0 }, { duration: 500, delay: 500 });
       $controversies.velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none", delay: 1000 });
     }
