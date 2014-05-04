@@ -21,11 +21,11 @@
       <ul>
         <% data.info.controversies.money.data.each do |info| %>
         <li>
-          <div style="width:<%= info.width %>;">
+          <div class="percent" data-width="<%= info.width %>">
             <b><%= info.label %></b>
-            <%= info.value %>
+            <span class="inside-text"><%= info.value %></span>
           </div>
-          <%= info.desc %>
+          <span class="outside-text"><%= info.desc %></span>
         </li>
         <% end %>
       </ul>
