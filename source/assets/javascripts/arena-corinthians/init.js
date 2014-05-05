@@ -300,6 +300,30 @@ var infografico = (function() {
       $controversies.velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none", delay: 1000 });
     }
   }
+
+  function vote (enter) {
+    var $vote = $('#vote');
+    var $title = $('.title', $vote);
+    var $ratingItens = $('#rating li', $vote);
+    if (enter) {
+      $vote.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
+      $title.velocity({ opacity: 1 }, { duration: 500, delay: 1000 });
+      $ratingItens.eq(2).velocity({ opacity: 1, marginTop: 0 }, { duration: 200, delay: 1000 });
+      $ratingItens.eq(1).velocity({ opacity: 1, marginTop: 0 }, { duration: 300, delay: 1000 });
+      $ratingItens.eq(3).velocity({ opacity: 1, marginTop: 0 }, { duration: 300, delay: 1000 });
+      $ratingItens.eq(0).velocity({ opacity: 1, marginTop: 0 }, { duration: 400, delay: 1000 });
+      $ratingItens.eq(4).velocity({ opacity: 1, marginTop: 0 }, { duration: 400, delay: 1000 });
+      openSection = 'vote';
+    } else {
+      $ratingItens.eq(2).velocity({ opacity: 0, marginTop: 500 }, { duration: 200, delay: 0 });
+      $ratingItens.eq(1).velocity({ opacity: 0, marginTop: 500 }, { duration: 300, delay: 0 });
+      $ratingItens.eq(3).velocity({ opacity: 0, marginTop: 500 }, { duration: 300, delay: 0 });
+      $ratingItens.eq(0).velocity({ opacity: 0, marginTop: 500 }, { duration: 400, delay: 0 });
+      $ratingItens.eq(4).velocity({ opacity: 0, marginTop: 500 }, { duration: 400, delay: 0 });
+      $title.velocity({ opacity: 0 }, { duration: 500, delay: 500 });
+      $vote.velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none", delay: 500 });
+    }
+  }
   // vote
 
   return {
