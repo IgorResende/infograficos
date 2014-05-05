@@ -9,14 +9,29 @@ var infografico = (function() {
     bindMenuAnimation();
     bindBack();
     start(true);
+    $('#share').velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
+    ratingVote();
+  }
+
+  function ratingVote () {
+    $('#rating li a').on('click', function (evt) {
+      evt.preventDefault();
+      $('.vote-active').removeClass('vote-active');
+      $(this).addClass('vote-active');
+      //ajax
+    })
   }
 
   function bindMenuAnimation () {
+    var $share = $('#share');
     $('.nav-section, .arena-hover').on('click', function (evt) {
       evt.preventDefault();
       evt.stopPropagation();
       var section = $(this).data('section');
       eval(section + '(true)')
+      $share.velocity({ opacity: 0 }, { duration: 100, delay: 0 });
+      $share.delay(200).attr('class', section)
+      $share.velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
       start(false);
     });
   }
@@ -25,6 +40,7 @@ var infografico = (function() {
     $('.all-back').on('click', function (evt) {
       evt.preventDefault();
       evt.stopPropagation();
+      $('#share').velocity({ opacity: 0 }, { duration: 200, delay: 0 });
       eval(openSection + '(false)');
       start(true);
     });
