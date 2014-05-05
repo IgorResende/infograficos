@@ -1,6 +1,7 @@
 # Geral
 all:
   back: "Voltar"
+  share: "Compartilhe"
 
 # Início
 start:
