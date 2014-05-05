@@ -1,0 +1,13 @@
+# Geral
+all:
+  back: "Voltar"
+  share: "Compartilhe"
+
+# Início
+start:
+  title: "Escale a sua seleção"
+  desc: "O técnico Luiz Felipe Escolari já decidiu, mas e você? Monte sua seleção para a Copa!"
+  schema:
+    title: "Esquema tático"
+    prev: "Anterior"
+    next: "Próximo"
