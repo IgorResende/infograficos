@@ -1,0 +1,191 @@
+#start
+  // background-image: url("../images/escalacao-selecao/layout/start.jpg")
+  // opacity: .5
+  background-position: top center
+
+  #title
+    position: absolute
+    top: 54px
+    left: 15px
+    font-size: 36px
+    font-weight: bolder
+    text-transform: uppercase
+    width: 240px
+    line-height: 41px
+    color: $color-yellow
+
+  #desc
+    position: absolute
+    top: 154px
+    left: 15px
+    font-size: 18px
+    font-weight: 500
+    width: 260px
+    line-height: 22px
+    letter-spacing: -.3px
+    color: #fff
+
+  #schema-select-area
+    position: absolute
+    width: 570px
+    top: 50px
+    left: 315px
+    height: 100px
+    h3
+      display: block
+      text-align: center
+      text-transform: lowercase
+      color: #fff
+      font-size: 18px
+      font-weight: 400
+      line-height: 31px
+    #schema-select-control
+      height: 40px
+      width: 80px
+      margin: 0 auto
+      line-height: 40px
+      margin-top: 9px
+      position: relative
+      .schema-select-button
+        background-color: transparent
+        border: none
+        width: 20px
+        height: 40px
+        position: absolute
+        cursor: pointer
+        display: block
+        background-repeat: no-repeat
+        background-position: center
+        overflow: hidden
+        text-indent: -999px
+        top: 0
+        &.prev
+          left: -22px
+          background-image: url("../images/escalacao-selecao/start/button-prev.png")
+        &.next
+          right: -22px
+          background-image: url("../images/escalacao-selecao/start/button-next.png")
+      #schema-select-options-container
+        width: 80px
+        height: 40px
+        overflow: hidden
+        margin: 0 auto
+      #schema-select-options
+        text-align: center
+        font-size: 24px
+        font-weight: bold
+        display: block
+        height: 40px
+        width: 400px
+        li
+          list-style: none
+          display: inline-block
+          width: 80px
+          float: left
+          a
+            display: block
+            text-decoration: none
+            color: $color-yellow
+
+
+  #field
+    +size(570px, 393px)
+    background-image: url("../images/escalacao-selecao/start/field.png")
+    background-repeat: no-repeat
+    position: absolute
+    top: 148px
+    left: 315px
+    .player
+      +circle(30px)
+      +box-shadow(0 0 3px #ccc)
+      +single-transition(all, .3s, linear)
+      list-style: none
+      background-color: #fff
+      position: absolute
+      cursor: pointer
+      z-index: 1
+      +topLeft(100px, 150px)
+      &:before
+        +circle(14px)
+        position: absolute
+        top: 8px
+        left: 8px
+        content: ""
+        background-color: $color-green
+    &.schema-4-4-2
+      #player1
+        +topLeft(0, calc(50% - 15px))
+      #player2
+        +topLeft(50px, calc(30% - 15px))
+      #player3
+        +topLeft(50px, calc(70% - 15px))
+      #player4
+        +topLeft(100px, calc(40% - 15px))
+      #player5
+        +topLeft(100px, calc(60% - 15px))
+      #player6
+        +topLeft(180px, calc(20% - 15px))
+      #player7
+        +topLeft(180px, calc(80% - 15px))
+      #player8
+        +topLeft(200px, calc(40% - 15px))
+      #player9
+        +topLeft(200px, calc(60% - 15px))
+      #player10
+        +topLeft(240px, calc(30% - 15px))
+      #player11
+        +topLeft(280px, calc(50% - 15px))
+    &.schema-4-2-4
+      #player1
+        +topLeft(0, calc(50% - 15px))
+      #player2
+        +topLeft(40px, calc(20% - 15px))
+      #player3
+        +topLeft(70px, calc(50% - 15px))
+      #player4
+        +topLeft(120px, calc(60% - 15px))
+      #player5
+        +topLeft(130px, calc(80% - 15px))
+      #player6
+        +topLeft(150px, calc(30% - 15px))
+      #player7
+        +topLeft(160px, calc(70% - 15px))
+      #player8
+        +topLeft(220px, calc(50% - 15px))
+      #player9
+        +topLeft(210px, calc(80% - 15px))
+      #player10
+        +topLeft(200px, calc(40% - 15px))
+      #player11
+        +topLeft(280px, calc(70% - 15px))
+    &.schema-2-4-4
+      #player1
+        +topLeft(150, calc(50% - 15px))
+      #player2
+        +topLeft(200px, calc(40% - 15px))
+      #player3
+        +topLeft(200px, calc(60% - 15px))
+      #player4
+        +topLeft(270px, calc(10% - 15px))
+      #player5
+        +topLeft(270px, calc(30% - 15px))
+      #player6
+        +topLeft(270px, calc(50% - 15px))
+      #player7
+        +topLeft(270px, calc(70% - 15px))
+      #player8
+        +topLeft(300px, calc(20% - 15px))
+      #player9
+        +topLeft(300px, calc(40% - 15px))
+      #player10
+        +topLeft(300px, calc(60% - 15px))
+      #player11
+        +topLeft(300px, calc(80% - 15px))
+
+  #coach
+    +size(250px, 382px)
+    background-image: url("../images/escalacao-selecao/start/coach.png")
+    background-repeat: no-repeat
+    position: absolute
+    top: 160px
+    left: 918px
