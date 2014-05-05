@@ -7,6 +7,26 @@ var infografico = (function() {
   function init() {
     console.log('escalacao-selecao')
     changeSchema();
+    start();
+  }
+
+  function start () {
+    var $start = $('#start');
+    var $title = $('#title', $start);
+    var $desc = $('#desc', $start);
+    var $field = $('#field', $start);
+    var $players = $('.player', $start);
+    var $schema = $('#schema-select-area', $start);
+    var $coach = $('#coach', $start);
+
+    $title.velocity({ opacity: 1 }, { duration: 500 });
+    $desc.velocity({ opacity: 1 }, { duration: 500, delay: 200  });
+    $field.velocity({ opacity: 1, marginTop: 0 }, { duration: 500, delay: 200  });
+    $players.delay(500).each(function (i, p) {
+      $players.eq(i).velocity({ opacity: 1 }, { duration: 300, delay: 100 * i });
+    });
+    $schema.velocity({ opacity: 1 }, { duration: 500, delay: 2000 });
+    $coach.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000 });
   }
 
   function changeSchema () {
@@ -36,5 +56,12 @@ var infografico = (function() {
 }());
 
 $(document).ready(function() {
-  infografico.init();
+  $("body").queryLoader2({
+    backgroundColor: '#00a750',
+    barColor: '#fff',
+    completeAnimation: 'grow',
+    onComplete: function (argument) {
+      infografico.init();
+    }
+  });
 });
