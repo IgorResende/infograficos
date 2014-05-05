@@ -2,16 +2,16 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.about.title %>
+        <%= data.arena.info.about.title %>
       </h1>
       <p>
-        <%= data.info.about.desc %>
+        <%= data.arena.info.about.desc %>
       </p>
     </div>
     <div id="workers-silhouette"></div>
     <div id="about-info">
       <ul>
-        <% data.info.about.infos.each do |info| %>
+        <% data.arena.info.about.infos.each do |info| %>
         <li>
           <h5><%= info.title %></h5>
           <p><%= info.desc %></p>
@@ -19,6 +19,6 @@
         <% end %>
       </ul>
     </div>
-    <button type="button" class="all-back"><%= data.info.all.back %></button>
+    <button type="button" class="all-back"><%= data.arena.info.all.back %></button>
   </div>
 </div>

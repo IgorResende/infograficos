@@ -2,21 +2,21 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.east_building.title %>
+        <%= data.arena.info.east_building.title %>
       </h1>
       <p>
-        <%= data.info.east_building.desc %>
+        <%= data.arena.info.east_building.desc %>
       </p>
     </div>
     <div id="east_building-cut"></div>
     <ul id="east_building-info" class="list-info">
-      <% data.info.east_building.infos.each do |info| %>
+      <% data.arena.info.east_building.infos.each do |info| %>
       <li>
         <h4><%= info.title %></h4>
         <p><%= info.desc %></p>
       </li>
       <% end %>
     </ul>
-    <button type="button" class="all-back dark"><%= data.info.all.back %></button>
+    <button type="button" class="all-back dark"><%= data.arena.info.all.back %></button>
   </div>
 </div>

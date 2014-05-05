@@ -2,14 +2,14 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.lockers.title %>
+        <%= data.arena.info.lockers.title %>
       </h1>
       <p>
-        <%= data.info.lockers.desc %>
+        <%= data.arena.info.lockers.desc %>
       </p>
     </div>
     <ol id="locker-details">
-      <% data.info.lockers.details.each do |info| %>
+      <% data.arena.info.lockers.details.each do |info| %>
       <li>
         <h4><%= info.title %></h4>
         <p><%= info.desc %></p>
@@ -17,16 +17,16 @@
       <% end %>
     </ol>
     <div id="locker-image">
-      <%= image_tag 'arena-corinthians/lockers/' + data.info.lockers.images.first.file_name, size: "570x370" %>
-      <p id="locker-image-desc"><%= data.info.lockers.images.first.desc %></p>
+      <%= image_tag 'arena-corinthians/lockers/' + data.arena.info.lockers.images.first.file_name, size: "570x370" %>
+      <p id="locker-image-desc"><%= data.arena.info.lockers.images.first.desc %></p>
     </div>
     <div id="locker-image-thumbs">
-      <button class="locker-image-nav locker-image-nav-prev" title="<%= data.info.lockers.nav.before %>">
-        <%= data.info.lockers.nav.before %>
+      <button class="locker-image-nav locker-image-nav-prev" title="<%= data.arena.info.lockers.nav.before %>">
+        <%= data.arena.info.lockers.nav.before %>
       </button>
       <div id="locker-image-thumbs-container">
         <ul>
-          <% data.info.lockers.images.each do |image| %>
+          <% data.arena.info.lockers.images.each do |image| %>
           <li>
             <%= image_tag 'arena-corinthians/lockers/' + image.file_name, size: "170" %>
             <span>
@@ -36,10 +36,10 @@
           <% end %>
         </ul>
       </div>
-      <button class="locker-image-nav locker-image-nav-next" title="<%= data.info.lockers.nav.next %>">
-        <%= data.info.lockers.nav.next %>
+      <button class="locker-image-nav locker-image-nav-next" title="<%= data.arena.info.lockers.nav.next %>">
+        <%= data.arena.info.lockers.nav.next %>
       </button>
     </div>
-    <button type="button" class="all-back"><%= data.info.all.back %></button>
+    <button type="button" class="all-back"><%= data.arena.info.all.back %></button>
   </div>
 </div>

@@ -2,14 +2,14 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.controversies.title %>
+        <%= data.arena.info.controversies.title %>
       </h1>
       <p>
-        <%= data.info.controversies.desc %>
+        <%= data.arena.info.controversies.desc %>
       </p>
     </div>
     <ul id="controversies-info">
-      <% data.info.controversies.infos.each do |info| %>
+      <% data.arena.info.controversies.infos.each do |info| %>
       <li>
         <h4><%= info.title %></h4>
         <p><%= info.desc %></p>
@@ -17,9 +17,9 @@
       <% end %>
     </ul>
     <div id="controversies-money">
-      <h3><%= data.info.controversies.money.title %></h3>
+      <h3><%= data.arena.info.controversies.money.title %></h3>
       <ul>
-        <% data.info.controversies.money.data.each do |info| %>
+        <% data.arena.info.controversies.money.data.each do |info| %>
         <li>
           <div class="percent" data-width="<%= info.width %>">
             <b><%= info.label %></b>
@@ -31,9 +31,9 @@
       </ul>
     </div>
     <div id="controversies-info2">
-    <h3><%= data.info.controversies.infos2.title %></h3>
+    <h3><%= data.arena.info.controversies.infos2.title %></h3>
       <ul>
-        <% data.info.controversies.infos2.data.each do |info| %>
+        <% data.arena.info.controversies.infos2.data.each do |info| %>
         <li>
           <b><%= info.quantity %></b>
           <%= info.desc %>
@@ -41,6 +41,6 @@
         <% end %>
       </ul>
     </div>
-    <button type="button" class="all-back dark"><%= data.info.all.back %></button>
+    <button type="button" class="all-back dark"><%= data.arena.info.all.back %></button>
   </div>
 </div>

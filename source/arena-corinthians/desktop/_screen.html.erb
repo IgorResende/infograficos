@@ -2,21 +2,21 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.screen.title %>
+        <%= data.arena.info.screen.title %>
       </h1>
       <p>
-        <%= data.info.screen.desc %>
+        <%= data.arena.info.screen.desc %>
       </p>
     </div>
     <div id="screen-image"></div>
     <div id="screen-title">
-      <h3><%= data.info.screen.subtitle %></h3>
-      <p><%= data.info.screen.desc2 %></p>
+      <h3><%= data.arena.info.screen.subtitle %></h3>
+      <p><%= data.arena.info.screen.desc2 %></p>
     </div>
     <div id="screen-schema"></div>
     <div id="screen-infos">
       <ul>
-        <% data.info.screen.infos.each do |info| %>
+        <% data.arena.info.screen.infos.each do |info| %>
         <li>
           <h4><%= info.title %></h4>
           <p><%= info.desc %></p>
@@ -24,6 +24,6 @@
         <% end %>
       </ul>
     </div>
-    <button type="button" class="all-back"><%= data.info.all.back %></button>
+    <button type="button" class="all-back"><%= data.arena.info.all.back %></button>
   </div>
 </div>

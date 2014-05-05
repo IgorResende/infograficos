@@ -2,21 +2,21 @@
   <div class="container">
     <div class="title">
       <h1>
-        <%= data.info.curiosities.title %>
+        <%= data.arena.info.curiosities.title %>
       </h1>
       <p>
-        <%= data.info.curiosities.desc %>
+        <%= data.arena.info.curiosities.desc %>
       </p>
     </div>
     <div id="curiosities-image"></div>
     <ul id="curiosities-info">
-      <% data.info.curiosities.infos.each do |info| %>
+      <% data.arena.info.curiosities.infos.each do |info| %>
         <li>
           <h5><%= info.title %></h5>
           <p><%= info.desc %></p>
         </li>
       <% end %>
     </ul>
-    <button type="button" class="all-back dark"><%= data.info.all.back %></button>
+    <button type="button" class="all-back dark"><%= data.arena.info.all.back %></button>
   </div>
 </div>
