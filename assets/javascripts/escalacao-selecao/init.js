@@ -1,0 +1,1 @@
+"use strict";var infografico=function(){function t(){console.log("escalacao-selecao")}var e="";return{init:t}}();$(document).ready(function(){infografico.init()});
