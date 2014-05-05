@@ -350,6 +350,9 @@ var infografico = (function() {
 
 $(document).ready(function() {
   $("body").queryLoader2({
+    backgroundColor: '#623cc7',
+    barColor: '#fff',
+    completeAnimation: 'grow',
     onComplete: function (argument) {
       infografico.init();
     }
