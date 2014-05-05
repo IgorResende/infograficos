@@ -6,10 +6,10 @@
   <title><%= data.page.title %></title>
   <%= partial "meta-social" %>
   <%= favicon_tag 'favicon.ico' %>
-   <%= stylesheet_link_tag "arena-corinthians.css" %>
+   <%= stylesheet_link_tag current_page.url.to_s.gsub! '/', '' %>
 </head>
 <body class="<%= page_classes %>">
   <%= yield %>
-  <%= javascript_include_tag  "arena-corinthians" %>
+  <%= javascript_include_tag  current_page.url.to_s.gsub! '/', '' %>
 </body>
 </html>
