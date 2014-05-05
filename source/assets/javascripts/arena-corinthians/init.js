@@ -349,5 +349,9 @@ var infografico = (function() {
 }());
 
 $(document).ready(function() {
-  infografico.init();
+  $("body").queryLoader2({
+    onComplete: function (argument) {
+      infografico.init();
+    }
+  });
 });
