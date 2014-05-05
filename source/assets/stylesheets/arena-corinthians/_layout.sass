@@ -80,7 +80,6 @@ body
   &.dark
     color: $color-black
 
-
 .list-info
   list-style: none
   width: $column * 6
@@ -125,4 +124,43 @@ body
       font-family: Museo300Regular
       line-height: 17px
 
+#share-area
+  display: block
+  background-color: transparent
+  height: 1px
+  overflow: visible
+  .container
+    background-color: transparent
+    height: 33px
+  #share
+    +size(170px, 33px)
+    position: absolute
+    top: 57px
+    right: 15px
+    z-index: 3
+    display: block
+    background-image: url("../images/arena-corinthians/all/social-dark.png")
+    &.start, &.numbers, &.curiosities, &.controversies, &.west_building, &.east_building
+      background-image: url("../images/arena-corinthians/all/social-dark.png")
+    &.comparative, &.about, &.screen, &.field, &.lockers, &.vote
+      background-image: url("../images/arena-corinthians/all/social-light.png")
+    h5
+      line-height: 33px
+      text-transform: uppercase
+      text-indent: 11px
+      font-size: 10px
+      color: transparent
+    ul
+      position: absolute
+      top: 0
+      left: 90px
+    li
+      +size(21px, 33px)
+      float: left
+      list-style: none
+      a
+        height: 33px
+        display: block
+        font-size: 1px
+        color: transparent
 
