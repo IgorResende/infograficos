@@ -2,6 +2,9 @@
 var infografico = (function() {
   'use strict';
 
+  var playerSelected = null;
+  var playerTypeSelected = null;
+
   var schemaSelected = '4-4-2';
 
   var playerPositions = {
@@ -250,8 +253,8 @@ var infografico = (function() {
     console.log('escalacao-selecao')
     changeSchema();
     start();
-    player();
     chooseInField();
+    confirmSelection();
   }
 
   function normalize(strAccents) {
@@ -270,11 +273,27 @@ var infografico = (function() {
     return strAccentsOut;
   }
 
+  function confirmSelection () {
+    $('#confirm').on('click', function () {
+      $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
+      $pointActive.addClass('point-selected');
+      var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
+      console.log(image)
+      $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
+      playerSelected = null;
+      playerTypeSelected = null;
+    })
+  }
+
+  var $pointActive = null;
+
   function chooseInField () {
     $('#field .player').on('click', function () {
       var point = $(this).data('point');
+      $pointActive = $(this);
       // console.log(point)
       var playerType = schemas[schemaSelected][point];
+      playerTypeSelected = playerType;
       // console.log( playerType )
       var disponiblePlayers = players[playerType];
       console.log( disponiblePlayers )
@@ -284,10 +303,10 @@ var infografico = (function() {
       for (var i = 0; i <= sizeList; i++) {
         if (disponiblePlayers.hasOwnProperty(i)) {
           console.log(disponiblePlayers[i])
-          var image = normalize(disponiblePlayers[i].name).toLowerCase()
+          var image = normalize(disponiblePlayers[i].name).toLowerCase();
           htmlList += ''+
            '<li class="item-1-' + sizeList + '">'+
-               '<div class="img-player">'+
+               '<div class="img-player" data-id="' + i + '">'+
                  '<div class="circle-container">'+
                    '<div class="circle"></div>'+
                  '</div>'+
@@ -305,13 +324,16 @@ var infografico = (function() {
       $('#player-position').text(playerPositions[playerType]);
       $('#list-players ul').html(htmlList);
       $('#players').velocity({ opacity: 1 }, { duration: 400, display: 'block'});
-    })
+      playerSelected = null;
+      choosePlayer();
+    });
   }
 
-  function player () {
+  function choosePlayer () {
     $('.img-player')
       .on('click', function () {
         var $player = $(this);
+        playerSelected = $player.data('id');
         if( $player.parent('li').hasClass('selected') ){
           $player.parent('li').removeClass('selected')
         } else{
