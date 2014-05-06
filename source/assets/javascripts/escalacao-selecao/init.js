@@ -291,7 +291,7 @@ var infografico = (function() {
                  '<div class="circle-container">'+
                    '<div class="circle"></div>'+
                  '</div>'+
-                 '<img src="/assets/images/escalacao-selecao/players/jogadores_big/' + image + '.png">'+
+                 '<img src="../assets/images/escalacao-selecao/players/jogadores_big/' + image + '.png">'+
                  '<div class="name-player">' + disponiblePlayers[i].name + '</div>'+
                  '<div class="tooltip-info">'+
                    '<div class="tooltip-info-name">' + disponiblePlayers[i].name + '</div>'+
