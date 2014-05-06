@@ -8,6 +8,40 @@ var infografico = (function() {
     console.log('escalacao-selecao')
     changeSchema();
     start();
+    player();
+  }
+
+  function player () {
+    $('.img-player')
+      .on('click', function () {
+        var $player = $(this);
+        if( $player.parent('li').hasClass('selected') ){
+          $player.parent('li').removeClass('selected')
+        } else{
+          $('.selected').removeClass('selected');
+          $player.parent('li').addClass('selected');
+        }
+      })
+      // .on('mouseenter', function () {
+      //   var $player = $(this);
+      //   var $tooltip = $player.find('.tooltip-info');
+      //   var $name = $player.find('.name-player');
+      //   if( !$player.parent('li').hasClass('selected') ){
+      //     // $player.velocity({ scale: 1.4 }, { duration: 200, display: 'block', delay: 50});
+      //     // $name.velocity({ opacity: 0, marginTop: -22 }, { duration: 500, display: 'block', delay: 500});
+      //     // $tooltip.velocity({ opacity: 1, marginTop: -10 }, { duration: 500, display: 'block', delay: 500 });
+      //   }
+      // })
+      // .on('mouseleave', function () {
+      //   var $player = $(this);
+      //   if( !$player.parent('li').hasClass('selected') ){
+      //     var $name = $player.find('.name-player');
+      //     var $tooltip = $player.find('.tooltip-info');
+      //     $player.velocity('stop').velocity('reverse');
+      //     $name.velocity('stop').velocity('reverse');
+      //     $tooltip.velocity('stop').velocity('reverse');
+      //   }
+      // })
   }
 
   function start () {
@@ -56,12 +90,12 @@ var infografico = (function() {
 }());
 
 $(document).ready(function() {
-  $("body").queryLoader2({
-    backgroundColor: '#00a750',
-    barColor: '#fff',
-    completeAnimation: 'grow',
-    onComplete: function (argument) {
-      infografico.init();
-    }
-  });
+    // $("body").queryLoader2({
+    //   backgroundColor: '#00a750',
+    //   barColor: '#fff',
+    //   completeAnimation: 'grow',
+    //   onComplete: function (argument) {
+        infografico.init();
+    //   }
+    // });
 });
