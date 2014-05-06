@@ -9,6 +9,13 @@ var infografico = (function() {
     changeSchema();
     start();
     player();
+    chooseInField();
+  }
+
+  function chooseInField () {
+    $('#field .player').on('click', function () {
+      $('#players').velocity({ opacity: 1 }, { duration: 400, display: 'block'});
+    })
   }
 
   function player () {
