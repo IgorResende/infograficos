@@ -1,3 +1,29 @@
-<div id="players">
-  players
+<div id="players" class="section">
+  <div class="container">
+    <div id="players-title">
+      <h2 id="player-position">Atacante</h2>
+      <p>Selecione o jogador para a posição:</p>
+    </div>
+    <div id="list-players">
+      <ul>
+        <% quant = 5  %>
+        <% quant.times do |num| %>
+        <li class="item-1-<%= quant %>">
+          <div class="img-player">
+            <div class="circle-container">
+              <div class="circle"></div>
+            </div>
+            <img src="/assets/images/escalacao-selecao/players/jogadores_big/bernard.png">
+            <div class="name-player">Neymar</div>
+            <div class="tooltip-info">
+              <div class="tooltip-info-name">Neymar Jr</div>
+              <div class="tooltip-info-games"><b>27</b> <span>jogos pela seleção</span></div>
+              <div class="tooltip-info-goals"><b>81</b> <span>gols pela seleção</span></div>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
