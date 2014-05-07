@@ -366,7 +366,7 @@ var infografico = (function() {
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
         var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
-        $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
+        $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
         playerSelected = null;
         playerTypeSelected = null;
         console.log(userChoice)
