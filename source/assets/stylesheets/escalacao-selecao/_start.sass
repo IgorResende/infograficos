@@ -77,7 +77,7 @@
         font-weight: bold
         display: block
         height: 40px
-        width: 400px
+        width: 800px
         li
           list-style: none
           display: inline-block
@@ -87,6 +87,8 @@
             display: block
             text-decoration: none
             color: $color-yellow
+            &[href="#schema-4-2-3-1"], &[href="#schema-4-3-1-2"]
+              letter-spacing: -1px
 
   #field
     +size(698px, 455px)
@@ -104,78 +106,35 @@
       position: absolute
       cursor: pointer
       z-index: 1
+      text-align: center
+      color: red
+      line-height: 90px
       &.point-selected
         background-image: none
 
-    &.schema-4-4-2
+    &.schema-4-2-3-1
       #player1
-        +topLeft(0, calc(50% - 15px))
+        +topLeft(-45px, 305px)
       #player2
-        +topLeft(50px, calc(30% - 15px))
+        +topLeft(0, 220px)
       #player3
-        +topLeft(50px, calc(70% - 15px))
+        +topLeft(0, 380px)
       #player4
-        +topLeft(100px, calc(40% - 15px))
+        +topLeft(40px, 150px)
       #player5
-        +topLeft(100px, calc(60% - 15px))
+        +topLeft(40px, 460px)
       #player6
-        +topLeft(180px, calc(20% - 15px))
+        +topLeft(80px, 220px)
       #player7
-        +topLeft(180px, calc(80% - 15px))
+        +topLeft(80px, 380px)
       #player8
-        +topLeft(200px, calc(40% - 15px))
+        +topLeft(160px, 170px)
       #player9
-        +topLeft(200px, calc(60% - 15px))
+        +topLeft(140px, 305px)
       #player10
-        +topLeft(240px, calc(30% - 15px))
+        +topLeft(160px, 440px)
       #player11
-        +topLeft(280px, calc(50% - 15px))
-    &.schema-4-2-4
-      #player1
-        +topLeft(0, calc(50% - 15px))
-      #player2
-        +topLeft(40px, calc(20% - 15px))
-      #player3
-        +topLeft(70px, calc(50% - 15px))
-      #player4
-        +topLeft(120px, calc(60% - 15px))
-      #player5
-        +topLeft(130px, calc(80% - 15px))
-      #player6
-        +topLeft(150px, calc(30% - 15px))
-      #player7
-        +topLeft(160px, calc(70% - 15px))
-      #player8
-        +topLeft(220px, calc(50% - 15px))
-      #player9
-        +topLeft(210px, calc(80% - 15px))
-      #player10
-        +topLeft(200px, calc(40% - 15px))
-      #player11
-        +topLeft(280px, calc(70% - 15px))
-    &.schema-2-4-4
-      #player1
-        +topLeft(150, calc(50% - 15px))
-      #player2
-        +topLeft(200px, calc(40% - 15px))
-      #player3
-        +topLeft(200px, calc(60% - 15px))
-      #player4
-        +topLeft(270px, calc(10% - 15px))
-      #player5
-        +topLeft(270px, calc(30% - 15px))
-      #player6
-        +topLeft(270px, calc(50% - 15px))
-      #player7
-        +topLeft(270px, calc(70% - 15px))
-      #player8
-        +topLeft(300px, calc(20% - 15px))
-      #player9
-        +topLeft(300px, calc(40% - 15px))
-      #player10
-        +topLeft(300px, calc(60% - 15px))
-      #player11
-        +topLeft(300px, calc(80% - 15px))
+        +topLeft(230px, 305px)
 
   #coach
     +size(847px, 626px)
