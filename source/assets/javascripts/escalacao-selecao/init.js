@@ -25,6 +25,46 @@ var infografico = (function() {
     '3-5-2'  : { '1': 1, '2': 2, '3': 2, '4': 6, '5': 6, '6': 7, '7': 7, '8': 2, '9': 6, '10': 5, '11': 6 }
   };
 
+  var userChoice = {
+    schema: '4-2-3-1',
+    players: {
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+      6: null,
+      7: null,
+      8: null,
+      9: null,
+      10: null,
+      11: null
+    }
+  };
+
+  // var playersAlternative = {
+  //   5 : {
+  //     5 1
+  //     5 2
+  //     5 4
+  //     5 5
+  //     5 6
+  //   },
+  //   6 : {
+  //     6 1
+  //     7 1
+  //     7 2
+  //     5 3
+  //     6 2
+  //     6 4
+  //     7 6
+  //   },
+  //   7 : {
+  //     7 3
+  //     7 4
+  //   }
+  // }
+
   var players = {
     1 : {
       1: {
@@ -322,12 +362,14 @@ var infografico = (function() {
         $alert.velocity({ opacity: 1 }, { duration: 400, display: 'block'});
         $alert.velocity({ opacity: 0 }, { duration: 400, delay: 1000,  display: 'block'});
       } else {
+        userChoice.players[ $pointActive.data('point') ] = playerSelected;
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
         var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
         $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
         playerSelected = null;
         playerTypeSelected = null;
+        console.log(userChoice)
       }
     });
   }
@@ -351,17 +393,15 @@ var infografico = (function() {
       playerTypeSelected = playerType;
       // console.log( playerType )
       var disponiblePlayers = players[playerType];
-      console.log( disponiblePlayers )
       var sizeList = _.size(disponiblePlayers) ;
-      console.log( sizeList )
       var htmlList = '';
       for (var i = 0; i <= sizeList; i++) {
         if (disponiblePlayers.hasOwnProperty(i)) {
-          console.log(disponiblePlayers[i])
           var image = normalize(disponiblePlayers[i].name).toLowerCase();
+          var alreadyChosen = _.contains(userChoice.players, i);
           htmlList += ''+
-           '<li class="item-1-' + sizeList + '">'+
-               '<div class="img-player" data-id="' + i + '">'+
+           '<li class="item-1-' + sizeList + ' ' + (alreadyChosen ? 'disabled': '' ) + '">'+
+               '<div class="img-player ' + (alreadyChosen ? 'disabled': '' ) + '" data-id="' + i + '">'+
                  '<div class="circle-container">'+
                    '<div class="circle"></div>'+
                  '</div>'+
@@ -380,17 +420,17 @@ var infografico = (function() {
       $('#list-players ul').html(htmlList);
       $('#players').velocity({ opacity: 1 }, { duration: 400, display: 'block'});
       playerSelected = null;
-      choosePlayer();
+      choosePlayer(point);
     });
   }
 
-  function choosePlayer () {
-    $('.img-player')
+  function choosePlayer (point) {
+    $('.img-player').not('.disabled')
       .on('click', function () {
         var $player = $(this);
         playerSelected = $player.data('id');
         if( $player.parent('li').hasClass('selected') ){
-          $player.parent('li').removeClass('selected')
+          $player.parent('li').removeClass('selected');
         } else{
           $('.selected').removeClass('selected');
           $player.parent('li').addClass('selected');
@@ -442,7 +482,6 @@ var infografico = (function() {
     var $optionsLi = $('#schema-select-options li');
     var $field = $('#field');
     var quant = $optionsLi.size();
-    console.log(quant)
     var actual = 0;
     $('.schema-select-button').on('click', function () {
       var $bt = $(this);
@@ -454,8 +493,8 @@ var infografico = (function() {
         $options.velocity({marginLeft: '-=80'});
         actual++;
       }
-      var schema = $optionsLi.eq(actual).find('a').attr('href').replace('#', '');
-      $field.attr('class', schema)
+      userChoice.schema = $optionsLi.eq(actual).find('a').attr('href').replace('#', '');
+      $field.attr('class', userChoice.schema)
     });
   }
 
