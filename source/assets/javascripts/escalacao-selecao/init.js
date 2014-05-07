@@ -256,6 +256,16 @@ var infografico = (function() {
     chooseInField();
     confirmSelection();
     backButton();
+    keyboardNav();
+  }
+
+  function keyboardNav (argument) {
+    $(document).keyup(function(e) {
+      // esc
+      if (e.keyCode == 27) {
+        $('#backField').trigger('click');
+      }
+    });
   }
 
   function normalize(strAccents) {
