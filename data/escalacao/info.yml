@@ -6,7 +6,7 @@ all:
 # Início
 start:
   title: "Escale a sua seleção"
-  desc: "Prendemos o Felipão e agora você é o técnico. Escale a seleção do seu jeito."
+  desc: "Prendemos o Felipão e agora você é o técnico. Escale a seleção titular do seu jeito e compartilhe com seus amigos."
   schema:
     title: "Esquema tático"
     prev: "Anterior"

@@ -5,24 +5,24 @@ var infografico = (function() {
   var playerSelected = null;
   var playerTypeSelected = null;
 
-  var schemaSelected = '4-4-2';
+  var schemaSelected = '4-3-3';
 
   var playerPositions = {
     1 : 'Goleiro',
     2 : 'Zagueiro',
-    3 : 'Lateral direito',
     4 : 'Lateral esquerdo',
+    3 : 'Lateral direito',
     5 : 'Volante',
     6 : 'Meia',
     7 : 'Atacante'
   }
   var schemas = {
+    '4-3-3'  : { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 7, '7': 7, '8': 6, '9': 5, '10': 7, '11': 5 },
     '4-2-3-1': { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 5, '7': 5, '8': 6, '9': 6, '10': 6, '11': 7 },
     '4-3-1-2': { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 5, '7': 5, '8': 7, '9': 5, '10': 7, '11': 6 },
     '4-4-2'  : { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 6, '7': 6, '8': 7, '9': 5, '10': 7, '11': 5 },
-    '4-3-3'  : { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 7, '7': 7, '8': 6, '9': 5, '10': 7, '11': 5 },
     '3-4-3'  : { '1': 1, '2': 2, '3': 2, '4': 6, '5': 6, '6': 7, '7': 7, '8': 2, '9': 5, '10': 7, '11': 5 },
-    '3-5-2'  : { '1': 1, '2': 2, '3': 2, '4': 6, '5': 6, '6': 7, '7': 7, '8': 2, '9': 6, '10': 5, '11': 6 }
+    '3-5-2'  : { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 7, '7': 7, '8': 2, '9': 6, '10': 5, '11': 6 }
   };
 
   var userChoice = {
@@ -42,33 +42,11 @@ var infografico = (function() {
     }
   };
 
-  // var playersAlternative = {
-  //   5 : {
-  //     5 1
-  //     5 2
-  //     5 4
-  //     5 5
-  //     5 6
-  //   },
-  //   6 : {
-  //     6 1
-  //     7 1
-  //     7 2
-  //     5 3
-  //     6 2
-  //     6 4
-  //     7 6
-  //   },
-  //   7 : {
-  //     7 3
-  //     7 4
-  //   }
-  // }
 
   var players = {
     1 : {
       1: {
-        name: 'Júlio César',
+        name: 'Julio Cesar',
         games: 78,
         goals: 56,
         image: 'julio-cesar',
@@ -88,15 +66,8 @@ var infografico = (function() {
         image: 'victor',
         link: 'http://www.espn.com.br/noticia/408456_victor'
       },
-      4: {
-        name: 'Diego Cavalieri',
-        games: 3,
-        goals: 4,
-        image: 'diego-cavalieri',
-        link: 'http://www.espn.com.br/noticia/408418_diego-cavalieri'
-      }
     },
-    2 : {
+    3 : {
       1: {
         name: 'Daniel Alves',
         games: 74,
@@ -111,15 +82,8 @@ var infografico = (function() {
         image: 'maicon',
         link: 'http://www.espn.com.br/noticia/408473_maicon'
       },
-      3: {
-        name: 'Rafinha',
-        games: 2,
-        goals: 0,
-        image: 'rafinha',
-        link: 'http://www.espn.com.br/noticia/408477_rafinha'
-      }
     },
-    3 : {
+    4 : {
       1: {
         name: 'Marcelo',
         games: 30,
@@ -134,15 +98,8 @@ var infografico = (function() {
         image: 'maxwell',
         link: 'http://www.espn.com.br/noticia/408491_maxwell'
       },
-      3: {
-        name: 'Filipe Luis',
-        games: 4,
-        goals: 0,
-        image: 'filipe-luis',
-        link: 'http://www.espn.com.br/noticia/408498_filipe-luis'
-      },
     },
-    4 : {
+    2 : {
       1: {
         name: 'Thiago Silva',
         games: 45,
@@ -165,47 +122,19 @@ var infografico = (function() {
         link: 'http://www.espn.com.br/noticia/408609_dante'
       },
       4: {
-        name: 'Dedé',
-        games: 9,
-        goals: 1,
-        image: 'dede',
-        link: 'http://www.espn.com.br/noticia/408610_dede'
-      },
-      5: {
-        name: 'Miranda',
-        games: 7,
-        goals: 0,
-        image: 'miranda',
-        link: 'http://www.espn.com.br/noticia/408614_miranda'
-      },
-      6: {
-        name: 'Marquinhos',
-        games: 1,
-        goals: 0,
-        image: 'marquinhos',
-        link: 'http://www.espn.com.br/noticia/408617_marquinhos'
-      },
-      7: {
         name: 'Henrique',
         games: 4,
         goals: 0,
         image: 'henrique',
         link: 'http://www.espn.com.br/noticia/408621_henrique'
       },
-      8: {
-        name: 'Réver',
-        games: 9,
-        goals: 1,
-        image: 'rever',
-        link: 'http://www.espn.com.br/noticia/408624_rever'
-      }
     },
     5 : {
       1: {
-        name: 'Luis Gustavo',
+        name: 'Luiz Gustavo',
         games: 17,
         goals: 1,
-        image: 'luis-gustavo',
+        image: 'luiz-gustavo',
         link: 'http://www.espn.com.br/noticia/408639_luiz-gustavo'
       },
       2: {
@@ -236,13 +165,6 @@ var infografico = (function() {
         image: 'fernandinho',
         link: 'http://www.espn.com.br/noticia/408653_fernandinho'
       },
-      6: {
-        name: 'Lucas Leiva',
-        games: 25,
-        goals: 0,
-        image: 'lucas-leiva',
-        link: 'http://www.espn.com.br/noticia/408655_lucas-leiva'
-      }
     },
     6 : {
       1: {
@@ -258,20 +180,6 @@ var infografico = (function() {
         goals: 1,
         image: 'william',
         link: 'http://www.espn.com.br/noticia/408667_willian'
-      },
-      3: {
-        name: 'Bernard',
-        games: 10,
-        goals: 1,
-        image: 'bernard',
-        link: 'http://www.espn.com.br/noticia/408673_bernard'
-      },
-      4: {
-        name: 'Philippe Coutinho',
-        games: 1,
-        goals: 0,
-        image: 'philippe-coutinho',
-        link: 'http://www.espn.com.br/noticia/408675_philippe-coutinho'
       },
     },
     7 : {
@@ -303,32 +211,167 @@ var infografico = (function() {
         image: 'jo',
         link: 'http://www.espn.com.br/noticia/408680_jo'
       },
-      5: {
-        name: 'Lucas',
-        games: 31,
-        goals: 4,
-        image: 'lucas',
-        link: 'http://www.espn.com.br/noticia/408687_lucas'
+     5: {
+        name: 'Bernard',
+        games: 10,
+        goals: 1,
+        image: 'bernard',
+        link: 'http://www.espn.com.br/noticia/408673_bernard'
       },
-      6: {
-        name: 'Robinho',
-        games: 90,
-        goals: 29,
-        image: 'robinho',
-        link: 'http://www.espn.com.br/noticia/408697_robinho'
-      }
     }
   }
 
   function init() {
-    console.log('escalacao-selecao')
+    loadUserTeam();
     changeSchema();
     start();
     chooseInField();
     confirmSelection();
     backButton();
     keyboardNav();
+    shareFb();
+    shareTt();
   }
+  function loadUserTeam (argument) {
+    var hash = window.location.search.replace('?', '');
+    var aa = encode(true, hash);
+    console.log(aa)
+  }
+
+  function encode (decode, string) {
+    var Base64 = {
+      _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+      encode: function (e) {
+        var t = "";
+        var n, r, i, s, o, u, a;
+        var f = 0;
+        e = Base64._utf8_encode(e);
+        while (f < e.length) {
+          n = e.charCodeAt(f++);
+          r = e.charCodeAt(f++);
+          i = e.charCodeAt(f++);
+          s = n >> 2;
+          o = (n & 3) << 4 | r >> 4;
+          u = (r & 15) << 2 | i >> 6;
+          a = i & 63;
+          if (isNaN(r)) {
+            u = a = 64
+          } else if (isNaN(i)) {
+            a = 64
+          }
+          t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
+        }
+        return t
+      },
+      decode: function (e) {
+        var t = "";
+        var n, r, i;
+        var s, o, u, a;
+        var f = 0;
+        e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+        while (f < e.length) {
+          s = this._keyStr.indexOf(e.charAt(f++));
+          o = this._keyStr.indexOf(e.charAt(f++));
+          u = this._keyStr.indexOf(e.charAt(f++));
+          a = this._keyStr.indexOf(e.charAt(f++));
+          n = s << 2 | o >> 4;
+          r = (o & 15) << 4 | u >> 2;
+          i = (u & 3) << 6 | a;
+          t = t + String.fromCharCode(n);
+          if (u != 64) {
+            t = t + String.fromCharCode(r)
+          }
+          if (a != 64) {
+            t = t + String.fromCharCode(i)
+          }
+        }
+        t = Base64._utf8_decode(t);
+        return t
+      },
+      _utf8_encode: function (e) {
+        e = e.replace(/\r\n/g, "\n");
+        var t = "";
+        for (var n = 0; n < e.length; n++) {
+          var r = e.charCodeAt(n);
+          if (r < 128) {
+            t += String.fromCharCode(r)
+          } else if (r > 127 && r < 2048) {
+            t += String.fromCharCode(r >> 6 | 192);
+            t += String.fromCharCode(r & 63 | 128)
+          } else {
+            t += String.fromCharCode(r >> 12 | 224);
+            t += String.fromCharCode(r >> 6 & 63 | 128);
+            t += String.fromCharCode(r & 63 | 128)
+          }
+        }
+          return t
+      },
+      _utf8_decode: function (e) {
+        var t = "";
+        var n = 0;
+        var r = c1 = c2 = 0;
+        while (n < e.length) {
+            r = e.charCodeAt(n);
+            if (r < 128) {
+              t += String.fromCharCode(r);
+              n++
+            } else if (r > 191 && r < 224) {
+              c2 = e.charCodeAt(n + 1);
+              t += String.fromCharCode((r & 31) << 6 | c2 & 63);
+              n += 2
+            } else {
+              c2 = e.charCodeAt(n + 1);
+              c3 = e.charCodeAt(n + 2);
+              t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+              n += 3
+            }
+        }
+        return t
+      }
+    }
+    if(decode){
+      return Base64.decode(string);
+    } else{
+      return Base64.encode(string);
+    }
+  }
+
+  function shareTt (a) {
+    $('.share-tt').on('click',function(event) {
+      $(this).attr('href', 'https://twitter.com/intent/tweet?' + 'hashtags=espn&text=' + encodeURIComponent('Prendemos o Felipão e agora você é o técnico.') + '&url=' + encodeURIComponent(window.location.href) )
+    });
+  }
+
+  function shareFb () {
+    $('.share-fb1').on('click',function(event) {
+      event.preventDefault();
+      var hashSchema = encode(false, JSON.stringify(userChoice))
+      console.log(userChoice)
+      console.log(hashSchema)
+      FB.ui({
+        method: 'feed',
+        link: (window.location.href + '?' + hashSchema),
+        picture: 'http://espnbr.github.io/infograficos/assets/images/escalacao-selecao/share/schema.png',
+        name: 'ESPN: Escale sua seleção!',
+        caption: 'ESPN: Escale sua seleção!',
+        description: 'Prendemos o Felipão e agora você é o técnico.',
+        message: 'Veja a minha escalação para a seleção brasileira e monte a sua: http://espn.uol.com.br/infografico/escalacao-selecao'
+      });
+    });
+    $('.share-fb2').on('click',function(event) {
+      event.preventDefault();
+      FB.ui({
+        method: 'feed',
+        link: window.location.href,
+        picture: 'http://espnbr.github.io/infograficos/assets/images/escalacao-selecao/share/page.png',
+        name: 'ESPN: Escale sua seleção!',
+        caption: 'ESPN: Escale sua seleção!',
+        description: 'Prendemos o Felipão e agora você é o técnico.',
+        message: 'O Felipão já anunciou seus convocados, monte já sua escalação: http://espn.uol.com.br/infografico/escalacao-selecao'
+      });
+    });
+  }
+
 
   function keyboardNav (argument) {
     $(document).keyup(function(e) {
@@ -369,7 +412,7 @@ var infografico = (function() {
         $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
         playerSelected = null;
         playerTypeSelected = null;
-        console.log(userChoice)
+        showShareTeam();
       }
     });
   }
@@ -388,10 +431,8 @@ var infografico = (function() {
     $('#field .player').on('click', function () {
       var point = $(this).data('point');
       $pointActive = $(this);
-      // console.log(point)
       var playerType = schemas[schemaSelected][point];
       playerTypeSelected = playerType;
-      // console.log( playerType )
       var disponiblePlayers = players[playerType];
       var sizeList = _.size(disponiblePlayers) ;
       var htmlList = '';
@@ -436,27 +477,7 @@ var infografico = (function() {
           $('.selected').removeClass('selected');
           $player.parent('li').addClass('selected');
         }
-      })
-      // .on('mouseenter', function () {
-      //   var $player = $(this);
-      //   var $tooltip = $player.find('.tooltip-info');
-      //   var $name = $player.find('.name-player');
-      //   if( !$player.parent('li').hasClass('selected') ){
-      //     // $player.velocity({ scale: 1.4 }, { duration: 200, display: 'block', delay: 50});
-      //     // $name.velocity({ opacity: 0, marginTop: -22 }, { duration: 500, display: 'block', delay: 500});
-      //     // $tooltip.velocity({ opacity: 1, marginTop: -10 }, { duration: 500, display: 'block', delay: 500 });
-      //   }
-      // })
-      // .on('mouseleave', function () {
-      //   var $player = $(this);
-      //   if( !$player.parent('li').hasClass('selected') ){
-      //     var $name = $player.find('.name-player');
-      //     var $tooltip = $player.find('.tooltip-info');
-      //     $player.velocity('stop').velocity('reverse');
-      //     $name.velocity('stop').velocity('reverse');
-      //     $tooltip.velocity('stop').velocity('reverse');
-      //   }
-      // })
+      });
   }
 
   function start () {
@@ -467,7 +488,7 @@ var infografico = (function() {
     var $players = $('.player', $start);
     var $schema = $('#schema-select-area', $start);
     var $coach = $('#coach', $start);
-
+    var $share = $('#share', $start);
     $title.velocity({ opacity: 1 }, { duration: 500 });
     $desc.velocity({ opacity: 1 }, { duration: 500, delay: 200  });
     $field.velocity({ opacity: 1, marginTop: 0 }, { duration: 500, delay: 200  });
@@ -476,6 +497,7 @@ var infografico = (function() {
     });
     $schema.velocity({ opacity: 1 }, { duration: 500, delay: 2000 });
     $coach.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000 });
+    $share.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000 });
   }
 
   function changeSchema () {
@@ -495,8 +517,24 @@ var infografico = (function() {
         actual++;
       }
       userChoice.schema = $optionsLi.eq(actual).find('a').attr('href').replace('#', '');
-      $field.attr('class', userChoice.schema)
+      schemaSelected = userChoice.schema.replace('schema-', '');
+      $('.player').removeClass('point-selected').empty();
+      $.each(userChoice.players, function (i, p) {
+        userChoice.players[i] = null;
+      });
+      showShareTeam();
+      $field.attr('class', userChoice.schema);
     });
+  }
+
+  function showShareTeam () {
+    var hasNull = _.contains(userChoice.players, null);
+    var $shareBt = $('#share-team-area');
+    if(hasNull){
+      $shareBt.velocity({ opacity: 0, marginLeft: 0 }, { duration: 500, display: 'none' });
+    } else{
+      $shareBt.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, display: 'block' });
+    }
   }
 
   return {
