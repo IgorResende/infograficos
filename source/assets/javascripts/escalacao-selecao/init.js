@@ -29,225 +29,253 @@ var infografico = (function() {
     1 : {
       1: {
         name: 'Júlio César',
-        games: 77,
-        goals: 0,
-        image: 'julio-cesar'
+        games: 78,
+        goals: 56,
+        image: 'julio-cesar',
+        link: 'http://www.espn.com.br/noticia/408369_julio-cesar'
       },
       2: {
         name: 'Jefferson',
-        games: 77,
-        goals: 0,
-        image: 'jefferson'
+        games: 9,
+        goals: 4,
+        image: 'jefferson',
+        link: 'http://www.espn.com.br/noticia/408408_jefferson'
       },
       3: {
         name: 'Victor',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 6,
+        goals: 1,
+        image: 'victor',
+        link: 'http://www.espn.com.br/noticia/408456_victor'
       },
       4: {
         name: 'Diego Cavalieri',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 3,
+        goals: 4,
+        image: 'diego-cavalieri',
+        link: 'http://www.espn.com.br/noticia/408418_diego-cavalieri'
       }
     },
     2 : {
       1: {
         name: 'Daniel Alves',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 74,
+        goals: 5,
+        image: 'daniel-alves',
+        link: 'http://www.espn.com.br/noticia/408465_daniel-alves'
       },
       2: {
         name: 'Maicon',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 66,
+        goals: 6,
+        image: 'maicon',
+        link: 'http://www.espn.com.br/noticia/408473_maicon'
       },
       3: {
         name: 'Rafinha',
-        games: 77,
+        games: 2,
         goals: 0,
-        image: ''
+        image: 'rafinha',
+        link: 'http://www.espn.com.br/noticia/408477_rafinha'
       }
     },
     3 : {
       1: {
         name: 'Marcelo',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 30,
+        goals: 4,
+        image: 'marcelo',
+        link: 'http://www.espn.com.br/noticia/408484_marcelo'
       },
       2: {
         name: 'Maxwell',
-        games: 77,
+        games: 7,
         goals: 0,
-        image: ''
+        image: 'maxwell',
+        link: 'http://www.espn.com.br/noticia/408491_maxwell'
       },
       3: {
         name: 'Filipe Luis',
-        games: 77,
+        games: 4,
         goals: 0,
-        image: ''
+        image: 'filipe-luis',
+        link: 'http://www.espn.com.br/noticia/408498_filipe-luis'
       },
     },
     4 : {
       1: {
         name: 'Thiago Silva',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 45,
+        goals: 2,
+        image: 'thiago-silva',
+        link: 'ttp://www.espn.com.br/noticia/408604_thiago-silva'
       },
       2: {
         name: 'David Luiz',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 34,
+        goals: 4,
+        image: 'david-luiz',
+        link: 'http://www.espn.com.br/noticia/408508_david-luiz'
       },
       3: {
         name: 'Dante',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 11,
+        goals: 2,
+        image: 'dante',
+        link: 'http://www.espn.com.br/noticia/408609_dante'
       },
       4: {
         name: 'Dedé',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 9,
+        goals: 1,
+        image: 'dede',
+        link: 'http://www.espn.com.br/noticia/408610_dede'
       },
       5: {
         name: 'Miranda',
-        games: 77,
+        games: 7,
         goals: 0,
-        image: ''
+        image: 'miranda',
+        link: 'http://www.espn.com.br/noticia/408614_miranda'
       },
       6: {
         name: 'Marquinhos',
-        games: 77,
+        games: 1,
         goals: 0,
-        image: ''
+        image: 'marquinhos',
+        link: 'http://www.espn.com.br/noticia/408617_marquinhos'
       },
       7: {
         name: 'Henrique',
-        games: 77,
+        games: 4,
         goals: 0,
-        image: ''
+        image: 'henrique',
+        link: 'http://www.espn.com.br/noticia/408621_henrique'
       },
       8: {
         name: 'Réver',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 9,
+        goals: 1,
+        image: 'rever',
+        link: 'http://www.espn.com.br/noticia/408624_rever'
       }
     },
     5 : {
       1: {
         name: 'Luis Gustavo',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 17,
+        goals: 1,
+        image: 'luis-gustavo',
+        link: 'http://www.espn.com.br/noticia/408639_luiz-gustavo'
       },
       2: {
         name: 'Paulinho',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 25,
+        goals: 5,
+        image: 'paulinho',
+        link: 'http://www.espn.com.br/noticia/408642_paulinho'
       },
       3: {
         name: 'Hernanes',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 23,
+        goals: 2,
+        image: 'hernanes',
+        link: 'http://www.espn.com.br/noticia/408646_hernanes'
       },
       4: {
         name: 'Ramires',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 41,
+        goals: 4,
+        image: 'ramires',
+        link: 'http://www.espn.com.br/noticia/408648_ramires'
       },
       5: {
         name: 'Fernandinho',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 6,
+        goals: 1,
+        image: 'fernandinho',
+        link: 'http://www.espn.com.br/noticia/408653_fernandinho'
       },
       6: {
-        name: 'Fernandinho',
-        games: 77,
+        name: 'Lucas Leiva',
+        games: 25,
         goals: 0,
-        image: ''
+        image: 'lucas-leiva',
+        link: 'http://www.espn.com.br/noticia/408655_lucas-leiva'
       }
     },
     6 : {
       1: {
         name: 'Oscar',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 29,
+        goals: 9,
+        image: 'oscar',
+        link: 'http://www.espn.com.br/noticia/408658_oscar'
       },
       2: {
         name: 'Willian',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 5,
+        goals: 1,
+        image: 'william',
+        link: 'http://www.espn.com.br/noticia/408667_willian'
       },
       3: {
         name: 'Bernard',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 10,
+        goals: 1,
+        image: 'bernard',
+        link: 'http://www.espn.com.br/noticia/408673_bernard'
       },
       4: {
         name: 'Philippe Coutinho',
-        games: 77,
+        games: 1,
         goals: 0,
-        image: ''
+        image: 'philippe-coutinho',
+        link: 'http://www.espn.com.br/noticia/408675_philippe-coutinho'
       },
-      5: {
-        name: 'Bernard',
-        games: 77,
-        goals: 0,
-        image: ''
-      }
     },
     7 : {
       1: {
         name: 'Neymar',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 47,
+        goals: 30,
+        image: 'neymar',
+        link: 'http://www.espn.com.br/noticia/407623_neymar'
       },
       2: {
         name: 'Hulk',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 33,
+        goals: 8,
+        image: 'hulk',
+        link: 'http://www.espn.com.br/noticia/408677_hulk'
       },
       3: {
         name: 'Fred',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 32,
+        goals: 16,
+        image: 'fred',
+        link: 'http://www.espn.com.br/noticia/408681_fred'
       },
       4: {
         name: 'Jô',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 15,
+        goals: 5,
+        image: 'jo',
+        link: 'http://www.espn.com.br/noticia/408680_jo'
       },
       5: {
         name: 'Lucas',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 31,
+        goals: 4,
+        image: 'lucas',
+        link: 'http://www.espn.com.br/noticia/408687_lucas'
       },
       6: {
         name: 'Robinho',
-        games: 77,
-        goals: 0,
-        image: ''
+        games: 90,
+        goals: 29,
+        image: 'robinho',
+        link: 'http://www.espn.com.br/noticia/408697_robinho'
       }
     }
   }
