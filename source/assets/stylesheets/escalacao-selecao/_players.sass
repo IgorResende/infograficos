@@ -130,15 +130,9 @@
       @for $i from 1 through $quant
         &.item-1-#{$i}
           width: 1100px / $i
-          $half: floor($i / 2)
           .circle-container
-            // left: (1100px / $i)/4
-            // top: (1100px / $i)/3
-            top: 70px
-          .circle
-            // +circle( (1100px / $i) - (1100px / $i)/2 )
-          //   left: (1100px / $i)/4
-          //   top: (1100px / $i)/3
+            top: 120px - (10px * $i)
+          $half: floor($i / 2)
           @for $ii from 0 through ($half)
             &:nth-child(#{$ii + 1}), &:nth-child(#{ $i - $ii  })
               padding-top: 35px * $ii
@@ -148,7 +142,8 @@
       .img-player
         +single-transition(all, .4s, ease)
         // +size(172px, 193px)
-        +size(100%, 193px)
+        // +size(100%, 193px)
+        width: 100%
         cursor: pointer
         // background-image: url("../images/escalacao-selecao/players/demo.png")
         // background-size: contain
@@ -167,7 +162,6 @@
           width: 100%
           position: absolute
           left: 0
-          height: 100px
           overflow: hidden
           // outline: 1px solid red
           z-index: 1
