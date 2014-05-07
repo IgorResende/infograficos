@@ -506,12 +506,12 @@ var infografico = (function() {
 }());
 
 $(document).ready(function() {
-    // $("body").queryLoader2({
-    //   backgroundColor: '#00a750',
-    //   barColor: '#fff',
-    //   completeAnimation: 'grow',
-    //   onComplete: function (argument) {
+    $("body").queryLoader2({
+      backgroundColor: '#00a750',
+      barColor: '#fff',
+      completeAnimation: 'grow',
+      onComplete: function (argument) {
         infografico.init();
-    //   }
-    // });
+      }
+    });
 });
