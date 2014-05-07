@@ -362,7 +362,7 @@ var infografico = (function() {
         $alert.velocity({ opacity: 1 }, { duration: 400, display: 'block'});
         $alert.velocity({ opacity: 0 }, { duration: 400, delay: 1000,  display: 'block'});
       } else {
-        userChoice.players[ $pointActive.data('point') ] = playerSelected;
+        userChoice.players[ $pointActive.data('point') ] = playerTypeSelected + '-' + playerSelected;
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
         var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
@@ -398,7 +398,7 @@ var infografico = (function() {
       for (var i = 0; i <= sizeList; i++) {
         if (disponiblePlayers.hasOwnProperty(i)) {
           var image = normalize(disponiblePlayers[i].name).toLowerCase();
-          var alreadyChosen = _.contains(userChoice.players, i);
+          var alreadyChosen = _.contains(userChoice.players, playerType+'-'+i);
           htmlList += ''+
            '<li class="item-1-' + sizeList + ' ' + (alreadyChosen ? 'disabled': '' ) + '">'+
                '<div class="img-player ' + (alreadyChosen ? 'disabled': '' ) + '" data-id="' + i + '">'+
