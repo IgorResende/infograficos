@@ -9,17 +9,15 @@ var infografico = (function() {
 
   var playerPositions = {
     1 : 'Goleiro',
-    2 : 'Lateral direito',
-    3 : 'Lateral esquerdo',
-    4 : 'Zagueiro',
+    2 : 'Zagueiro',
+    3 : 'Lateral direito',
+    4 : 'Lateral esquerdo',
     5 : 'Volante',
     6 : 'Meia',
     7 : 'Atacante'
   }
   var schemas = {
-    '4-4-2': { '1': 1, '2': 4, '3': 4, '4': 2, '5': 2, '6': 3, '7': 3, '8': 5, '9': 5, '10': 7, '11': 7 },
-    '4-2-4': { '1': 1, '2': 4, '3': 4, '4': 4, '5': 2, '6': 3, '7': 3, '8': 5, '9': 5, '10': 7, '11': 7 },
-    '2-4-4': { '1': 1, '2': 4, '3': 4, '4': 2, '5': 3, '6': 3, '7': 5, '8': 5, '9': 7, '10': 7, '11': 7 },
+    '4-2-3-1': { '1': 1, '2': 2, '3': 2, '4': 3, '5': 4, '6': 5, '7': 5, '8': 6, '9': 6, '10': 6, '11': 7 },
   };
 
   var players = {
@@ -408,8 +406,10 @@ var infografico = (function() {
 
   function changeSchema () {
     var $options = $('#schema-select-options');
+    var $optionsLi = $('#schema-select-options li');
     var $field = $('#field');
-    var quant = $options.size();
+    var quant = $optionsLi.size();
+    console.log(quant)
     var actual = 0;
     $('.schema-select-button').on('click', function () {
       var $bt = $(this);
@@ -417,11 +417,11 @@ var infografico = (function() {
         $options.velocity({marginLeft: '+=80'});
         actual--;
       }
-      if( $bt.hasClass('next') && actual <= quant){
+      if( $bt.hasClass('next') && actual < quant-1){
         $options.velocity({marginLeft: '-=80'});
         actual++;
       }
-      var schema = $options.find('li').eq(actual).find('a').attr('href').replace('#', '');
+      var schema = $optionsLi.eq(actual).find('a').attr('href').replace('#', '');
       $field.attr('class', schema)
     });
   }
