@@ -276,12 +276,18 @@ var infografico = (function() {
 
   function confirmSelection () {
     $('#confirm').on('click', function () {
-      $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
-      $pointActive.addClass('point-selected');
-      var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
-      $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
-      playerSelected = null;
-      playerTypeSelected = null;
+      if( playerSelected === null){
+        var $alert = $('#validate-alert')
+        $alert.velocity({ opacity: 1 }, { duration: 400, display: 'block'});
+        $alert.velocity({ opacity: 0 }, { duration: 400, delay: 1000,  display: 'block'});
+      } else {
+        $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
+        $pointActive.addClass('point-selected');
+        var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
+        $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
+        playerSelected = null;
+        playerTypeSelected = null;
+      }
     });
   }
 
