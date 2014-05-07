@@ -255,6 +255,7 @@ var infografico = (function() {
     start();
     chooseInField();
     confirmSelection();
+    backButton();
   }
 
   function normalize(strAccents) {
@@ -278,11 +279,18 @@ var infografico = (function() {
       $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
       $pointActive.addClass('point-selected');
       var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
-      console.log(image)
       $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png">')
       playerSelected = null;
       playerTypeSelected = null;
-    })
+    });
+  }
+
+  function backButton () {
+    $('#backField').on('click', function () {
+      $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
+      playerSelected = null;
+      playerTypeSelected = null;
+    });
   }
 
   var $pointActive = null;

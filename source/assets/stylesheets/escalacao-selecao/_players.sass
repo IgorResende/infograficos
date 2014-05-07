@@ -3,8 +3,10 @@
   // background-position: center
   display: none
   opacity: 0
-  background-color: rgba(51, 51, 51, .9)
+  // background-color: rgba(51, 51, 51, .9)
+  background-image: url("../images/escalacao-selecao/players/bg-opacity.png")
   z-index: 2
+  // display: block
 
   #players-title
     position: absolute
@@ -32,6 +34,30 @@
     width: 100%
     height: 80px
     text-align: center
+    #backField
+      +single-transition(all, .4s, ease)
+      position: absolute
+      top: 20px
+      left: 0px
+      height: 40px
+      line-height: 40px
+      background-color: transparent
+      color: #fff
+      font-size: 14px
+      text-transform: uppercase
+      border: none
+      cursor: pointer
+      padding: 0 15px
+      &:hover
+        opacity: .5
+      &:before
+        +square(0)
+        content: ""
+        border: 6px solid transparent
+        border-color: transparent $color-yellow transparent transparent
+        position: absolute
+        top: 13px
+        left: 0px
     #confirm
       +single-transition(all, .4s, ease)
       text-align: center
