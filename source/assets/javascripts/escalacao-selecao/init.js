@@ -407,7 +407,7 @@ var infografico = (function() {
                  '<div class="tooltip-info">'+
                    '<div class="tooltip-info-name">' + disponiblePlayers[i].name + '</div>'+
                    '<div class="tooltip-info-games"><b>' + disponiblePlayers[i].games + '</b> <span>jogos pela seleção</span></div>'+
-                   '<div class="tooltip-info-goals"><b>' + disponiblePlayers[i].goals + '</b> <span>gols pela seleção</span></div>'+
+                   '<div class="tooltip-info-goals"><b>' + disponiblePlayers[i].goals + '</b> <span>' + (playerType == 1 ? 'gols softidos' : 'gols pela seleção') + '</span></div>'+
                    '<div class="tooltip-info-more"><a href="' + disponiblePlayers[i].link + '" target="_blank">Saiba mais</a></div>'+
                  '</div>'+
                '</div>'+
