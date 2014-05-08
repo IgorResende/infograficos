@@ -222,7 +222,7 @@ var infografico = (function() {
   }
 
   function init() {
-    loadUserTeam();
+    loadUserTeam()
     changeSchema();
     start();
     chooseInField();
@@ -232,103 +232,50 @@ var infografico = (function() {
     shareFb();
     shareTt();
   }
-  function loadUserTeam (argument) {
+
+  function loadUserTeam () {
     var hash = window.location.search.replace('?', '');
-    var aa = encode(true, hash);
-    console.log(aa)
+    if( hash != '' ){
+      var strData = encode(true, hash );
+      var loadedData = jQuery.parseJSON( strData );
+      if(_.isObject(loadedData)){
+        userChoice = loadedData;
+        schemaSelected = userChoice.schema.replace('schema-','')
+        $('#field').attr('class', 'schema-' + schemaSelected );
+        _.each( userChoice.players , function(typePlayer, index){
+          var player = typePlayer.split('-');
+          var image = normalize( players[player[0]][player[1]].name ).toLowerCase();
+          $('#player'+index)
+            .addClass('point-selected')
+            .html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[player[0]][player[1]].name + '</span>')
+        });
+        schemaActual = $('#schema-select-options li a[href="#schema-' + schemaSelected + '"]').parent('li').index();
+        $('#schema-select-options').velocity({marginLeft: -(80*schemaActual)});
+      }
+    }
+  }
+
+  function gaEvents (typeEvt, data ) {
+    if(_gaq){
+      if(typeEvt == 1){
+        _gaq.push(
+          ['_trackSocial', data.rede, 'Compartilhar',data.url],
+          ['_trackEvent', 'Infograficos\Escalacao\\' + data.secao,'Compartilhar ' + data.rede, data.url]
+        );
+      }
+      if(typeEvt == 2){
+        console.log('jog')
+        _gaq.push(['_trackEvent', 'Infograficos\Escalacao','Jogador', data.pos +'|'+ data.player ]);
+      }
+      if(typeEvt == 3){
+        _gaq.push(['_trackEvent', 'Infograficos\Escalacao','Tatica','<Escolher Tatica>\\' + schemaSelected ]);
+
+      }
+    }
+
   }
 
   function encode (decode, string) {
-    var Base64 = {
-      _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
-      encode: function (e) {
-        var t = "";
-        var n, r, i, s, o, u, a;
-        var f = 0;
-        e = Base64._utf8_encode(e);
-        while (f < e.length) {
-          n = e.charCodeAt(f++);
-          r = e.charCodeAt(f++);
-          i = e.charCodeAt(f++);
-          s = n >> 2;
-          o = (n & 3) << 4 | r >> 4;
-          u = (r & 15) << 2 | i >> 6;
-          a = i & 63;
-          if (isNaN(r)) {
-            u = a = 64
-          } else if (isNaN(i)) {
-            a = 64
-          }
-          t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
-        }
-        return t
-      },
-      decode: function (e) {
-        var t = "";
-        var n, r, i;
-        var s, o, u, a;
-        var f = 0;
-        e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
-        while (f < e.length) {
-          s = this._keyStr.indexOf(e.charAt(f++));
-          o = this._keyStr.indexOf(e.charAt(f++));
-          u = this._keyStr.indexOf(e.charAt(f++));
-          a = this._keyStr.indexOf(e.charAt(f++));
-          n = s << 2 | o >> 4;
-          r = (o & 15) << 4 | u >> 2;
-          i = (u & 3) << 6 | a;
-          t = t + String.fromCharCode(n);
-          if (u != 64) {
-            t = t + String.fromCharCode(r)
-          }
-          if (a != 64) {
-            t = t + String.fromCharCode(i)
-          }
-        }
-        t = Base64._utf8_decode(t);
-        return t
-      },
-      _utf8_encode: function (e) {
-        e = e.replace(/\r\n/g, "\n");
-        var t = "";
-        for (var n = 0; n < e.length; n++) {
-          var r = e.charCodeAt(n);
-          if (r < 128) {
-            t += String.fromCharCode(r)
-          } else if (r > 127 && r < 2048) {
-            t += String.fromCharCode(r >> 6 | 192);
-            t += String.fromCharCode(r & 63 | 128)
-          } else {
-            t += String.fromCharCode(r >> 12 | 224);
-            t += String.fromCharCode(r >> 6 & 63 | 128);
-            t += String.fromCharCode(r & 63 | 128)
-          }
-        }
-          return t
-      },
-      _utf8_decode: function (e) {
-        var t = "";
-        var n = 0;
-        var r = c1 = c2 = 0;
-        while (n < e.length) {
-            r = e.charCodeAt(n);
-            if (r < 128) {
-              t += String.fromCharCode(r);
-              n++
-            } else if (r > 191 && r < 224) {
-              c2 = e.charCodeAt(n + 1);
-              t += String.fromCharCode((r & 31) << 6 | c2 & 63);
-              n += 2
-            } else {
-              c2 = e.charCodeAt(n + 1);
-              c3 = e.charCodeAt(n + 2);
-              t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
-              n += 3
-            }
-        }
-        return t
-      }
-    }
     if(decode){
       return Base64.decode(string);
     } else{
@@ -339,15 +286,22 @@ var infografico = (function() {
   function shareTt (a) {
     $('.share-tt').on('click',function(event) {
       $(this).attr('href', 'https://twitter.com/intent/tweet?' + 'hashtags=espn&text=' + encodeURIComponent('Prendemos o Felipão e agora você é o técnico.') + '&url=' + encodeURIComponent(window.location.href) )
+      gaEvents(1, { rede: 'Twitter', url: window.location.href, secao: 'Social buttons'});
     });
   }
 
   function shareFb () {
     $('.share-fb1').on('click',function(event) {
       event.preventDefault();
+      gaEvents('Facebook', window.location.href, 'Share team');
+      var hasNull = _.contains(userChoice.players, null);
+      if(_.contains(userChoice.players, null)){
+        var $alert = $('#warn-fb')
+        $alert.velocity({ opacity: 1 }, { duration: 400, display: 'block'});
+        $alert.velocity({ opacity: 0 }, { duration: 400, delay: 1000,  display: 'block'});
+        return;
+      }
       var hashSchema = encode(false, JSON.stringify(userChoice))
-      console.log(userChoice)
-      console.log(hashSchema)
       FB.ui({
         method: 'feed',
         link: (window.location.href + '?' + hashSchema),
@@ -360,6 +314,7 @@ var infografico = (function() {
     });
     $('.share-fb2').on('click',function(event) {
       event.preventDefault();
+      gaEvents('Facebook', window.location.href, 'Social buttons')
       FB.ui({
         method: 'feed',
         link: window.location.href,
@@ -371,7 +326,6 @@ var infografico = (function() {
       });
     });
   }
-
 
   function keyboardNav (argument) {
     $(document).keyup(function(e) {
@@ -405,6 +359,7 @@ var infografico = (function() {
         $alert.velocity({ opacity: 1 }, { duration: 400, display: 'block'});
         $alert.velocity({ opacity: 0 }, { duration: 400, delay: 1000,  display: 'block'});
       } else {
+        gaEvents(2, { pos: playerPositions[playerTypeSelected], player: players[playerTypeSelected][playerSelected].name });
         userChoice.players[ $pointActive.data('point') ] = playerTypeSelected + '-' + playerSelected;
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
@@ -412,7 +367,6 @@ var infografico = (function() {
         $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
         playerSelected = null;
         playerTypeSelected = null;
-        showShareTeam();
       }
     });
   }
@@ -489,6 +443,7 @@ var infografico = (function() {
     var $schema = $('#schema-select-area', $start);
     var $coach = $('#coach', $start);
     var $share = $('#share', $start);
+    var $shareTeam = $('#share-team-area', $start);
     $title.velocity({ opacity: 1 }, { duration: 500 });
     $desc.velocity({ opacity: 1 }, { duration: 500, delay: 200  });
     $field.velocity({ opacity: 1, marginTop: 0 }, { duration: 500, delay: 200  });
@@ -498,43 +453,39 @@ var infografico = (function() {
     $schema.velocity({ opacity: 1 }, { duration: 500, delay: 2000 });
     $coach.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000 });
     $share.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000 });
+    $shareTeam.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, delay: 2000, display: 'block' });
   }
 
+  var schemaActual = 0;
   function changeSchema () {
     var $options = $('#schema-select-options');
     var $optionsLi = $('#schema-select-options li');
     var $field = $('#field');
     var quant = $optionsLi.size();
-    var actual = 0;
     $('.schema-select-button').on('click', function () {
       var $bt = $(this);
-      if( $bt.hasClass('prev') && actual > 0){
+      var moved = false;
+      if( $bt.hasClass('prev') && schemaActual > 0){
         $options.velocity({marginLeft: '+=80'});
-        actual--;
+        moved = true;
+        schemaActual--;
       }
-      if( $bt.hasClass('next') && actual < quant-1){
+      if( $bt.hasClass('next') && schemaActual < quant-1){
         $options.velocity({marginLeft: '-=80'});
-        actual++;
+        moved = true;
+        schemaActual++;
       }
-      userChoice.schema = $optionsLi.eq(actual).find('a').attr('href').replace('#', '');
-      schemaSelected = userChoice.schema.replace('schema-', '');
-      $('.player').removeClass('point-selected').empty();
-      $.each(userChoice.players, function (i, p) {
-        userChoice.players[i] = null;
-      });
-      showShareTeam();
-      $field.attr('class', userChoice.schema);
+      if(moved){
+        userChoice.schema = $optionsLi.eq(schemaActual).find('a').attr('href').replace('#schema-', '');
+        schemaSelected = userChoice.schema;
+        gaEvents(3);
+        $('.player').removeClass('point-selected').empty();
+        $.each(userChoice.players, function (i, p) {
+          userChoice.players[i] = null;
+        });
+        $field.attr('class', 'schema-'+userChoice.schema);
+      }
     });
-  }
-
-  function showShareTeam () {
-    var hasNull = _.contains(userChoice.players, null);
-    var $shareBt = $('#share-team-area');
-    if(hasNull){
-      $shareBt.velocity({ opacity: 0, marginLeft: 0 }, { duration: 500, display: 'none' });
-    } else{
-      $shareBt.velocity({ opacity: 1, marginLeft: 0 }, { duration: 500, display: 'block' });
-    }
   }
 
   return {
@@ -552,4 +503,73 @@ $(document).ready(function() {
         infografico.init();
       }
     });
+    var $body = $('body'),
+        $espnHeader = $('#main_header'),
+        $newsTitle = $('.single-post-header'),
+        newsTitleOffset = $newsTitle.offset(),
+        newsTitleSize = $newsTitle.height();
+        // $uolHeader = $('#uol_header'),
+        // $navigationBar = $espnHeader.children('#header_navigation'),
+        // $realtimeBar = $espnHeader.children('#realtime'),
+        // $teamsBar = $espnHeader.children('#teams');
+
+    // var uolHeaderHeight,
+    //     navigationBarHeight,
+    //     realtimeBarHeight,
+    //     teamsBarHeight,
+    //     espnHeaderHeight,
+    //     totalHeaderHeight,
+    //     pastHeaderHeight,
+    //     scrollTopHeight = 0,
+    //     hasRealtime = false;
+
+    // if (on.desktop()) {
+    //   uolHeaderHeight = 30,
+    //   navigationBarHeight = 60,
+    //   realtimeBarHeight = 63,
+    //   teamsBarHeight = 46,
+    //   espnHeaderHeight = navigationBarHeight + teamsBarHeight,
+    //   totalHeaderHeight = uolHeaderHeight + espnHeaderHeight;
+    // } else if (on.mobile()) {
+    //   uolHeaderHeight = 30,
+    //   navigationBarHeight = 50,
+    //   realtimeBarHeight = 108,
+    //   espnHeaderHeight = navigationBarHeight,
+    //   totalHeaderHeight = uolHeaderHeight + espnHeaderHeight;
+    // }
+
+    // $(window).on('scroll touchmove', function() {
+    //   scrollTopHeight = $(this).scrollTop();
+    //   hasRealtime = $espnHeader.hasClass('realtime');
+
+    //   // if($newsTitle.length > 0) {
+    //   //   if(scrollTopHeight > (newsTitleOffset.top + newsTitleSize)) {
+    //   //     $newsTitle.addClass('past-news-title');
+    //   //     $newsTitle.parent().find('.content').css('marginTop', newsTitleSize + 20);
+    //   //   } else {
+    //   //     $newsTitle.removeClass('past-news-title');
+    //   //     $newsTitle.parent().find('.content').css('marginTop', 0);
+    //   //   }
+    //   // }
+
+    //   pastHeaderHeight = hasRealtime ? totalHeaderHeight + realtimeBarHeight : totalHeaderHeight;
+    //   pastHeaderHeight -= navigationBarHeight;
+
+    //   console.log(pastHeaderHeight)
+
+    //   if (scrollTopHeight >= uolHeaderHeight) {
+    //     $body.addClass('enter-header');
+    //   } else {
+    //     $body.removeClass('enter-header');
+    //   }
+
+    //   if (scrollTopHeight >= pastHeaderHeight) {
+    //     $body.addClass('past-header');
+    //   } else {
+    //     $body.removeClass('past-header');
+    //   }
+    // });
 });
+
+
+
