@@ -4,6 +4,8 @@ var infografico = (function() {
 
   var playerSelected = null;
   var playerTypeSelected = null;
+  var imagePath: 'http://content.espn.com.br/infograficos/escalacao-selecao/assets/images/'
+  // var imagePath: 'http://0.0.0.0:4567/assets/images/'
 
   var schemaSelected = '4-3-3';
 
@@ -247,7 +249,7 @@ var infografico = (function() {
           var image = normalize( players[player[0]][player[1]].name ).toLowerCase();
           $('#player'+index)
             .addClass('point-selected')
-            .html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[player[0]][player[1]].name + '</span>')
+            .html('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[player[0]][player[1]].name + '</span>')
         });
         schemaActual = $('#schema-select-options li a[href="#schema-' + schemaSelected + '"]').parent('li').index();
         $('#schema-select-options').velocity({marginLeft: -(80*schemaActual)});
@@ -364,7 +366,7 @@ var infografico = (function() {
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
         var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
-        $pointActive.html('<img src="../assets/images/escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
+        $pointActive.html('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
         playerSelected = null;
         playerTypeSelected = null;
       }
@@ -400,7 +402,7 @@ var infografico = (function() {
                  '<div class="circle-container">'+
                    '<div class="circle"></div>'+
                  '</div>'+
-                 '<img src="../assets/images/escalacao-selecao/players/jogadores_big/' + image + '.png">'+
+                 '<img src="' + imagePath + 'escalacao-selecao/players/jogadores_big/' + image + '.png">'+
                  '<div class="name-player">' + disponiblePlayers[i].name + '</div>'+
                  '<div class="tooltip-info">'+
                    '<div class="tooltip-info-name">' + disponiblePlayers[i].name + '</div>'+
@@ -503,72 +505,6 @@ $(document).ready(function() {
         infografico.init();
       }
     });
-    var $body = $('body'),
-        $espnHeader = $('#main_header'),
-        $newsTitle = $('.single-post-header'),
-        newsTitleOffset = $newsTitle.offset(),
-        newsTitleSize = $newsTitle.height();
-        // $uolHeader = $('#uol_header'),
-        // $navigationBar = $espnHeader.children('#header_navigation'),
-        // $realtimeBar = $espnHeader.children('#realtime'),
-        // $teamsBar = $espnHeader.children('#teams');
-
-    // var uolHeaderHeight,
-    //     navigationBarHeight,
-    //     realtimeBarHeight,
-    //     teamsBarHeight,
-    //     espnHeaderHeight,
-    //     totalHeaderHeight,
-    //     pastHeaderHeight,
-    //     scrollTopHeight = 0,
-    //     hasRealtime = false;
-
-    // if (on.desktop()) {
-    //   uolHeaderHeight = 30,
-    //   navigationBarHeight = 60,
-    //   realtimeBarHeight = 63,
-    //   teamsBarHeight = 46,
-    //   espnHeaderHeight = navigationBarHeight + teamsBarHeight,
-    //   totalHeaderHeight = uolHeaderHeight + espnHeaderHeight;
-    // } else if (on.mobile()) {
-    //   uolHeaderHeight = 30,
-    //   navigationBarHeight = 50,
-    //   realtimeBarHeight = 108,
-    //   espnHeaderHeight = navigationBarHeight,
-    //   totalHeaderHeight = uolHeaderHeight + espnHeaderHeight;
-    // }
-
-    // $(window).on('scroll touchmove', function() {
-    //   scrollTopHeight = $(this).scrollTop();
-    //   hasRealtime = $espnHeader.hasClass('realtime');
-
-    //   // if($newsTitle.length > 0) {
-    //   //   if(scrollTopHeight > (newsTitleOffset.top + newsTitleSize)) {
-    //   //     $newsTitle.addClass('past-news-title');
-    //   //     $newsTitle.parent().find('.content').css('marginTop', newsTitleSize + 20);
-    //   //   } else {
-    //   //     $newsTitle.removeClass('past-news-title');
-    //   //     $newsTitle.parent().find('.content').css('marginTop', 0);
-    //   //   }
-    //   // }
-
-    //   pastHeaderHeight = hasRealtime ? totalHeaderHeight + realtimeBarHeight : totalHeaderHeight;
-    //   pastHeaderHeight -= navigationBarHeight;
-
-    //   console.log(pastHeaderHeight)
-
-    //   if (scrollTopHeight >= uolHeaderHeight) {
-    //     $body.addClass('enter-header');
-    //   } else {
-    //     $body.removeClass('enter-header');
-    //   }
-
-    //   if (scrollTopHeight >= pastHeaderHeight) {
-    //     $body.addClass('past-header');
-    //   } else {
-    //     $body.removeClass('past-header');
-    //   }
-    // });
 });
 
 

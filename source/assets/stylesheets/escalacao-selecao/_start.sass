@@ -1,5 +1,5 @@
 #start
-  // background-image: url("../images/escalacao-selecao/layout/start.jpg")
+  // background-image: url("#{$image-path}escalacao-selecao/layout/start.jpg")
   background-position: top center
   display: block
   z-index: 1
@@ -62,10 +62,10 @@
         top: 0
         &.prev
           left: -22px
-          background-image: url("../images/escalacao-selecao/start/button-prev.png")
+          background-image: url("#{$image-path}escalacao-selecao/start/button-prev.png")
         &.next
           right: -22px
-          background-image: url("../images/escalacao-selecao/start/button-next.png")
+          background-image: url("#{$image-path}escalacao-selecao/start/button-next.png")
       #schema-select-options-container
         width: 80px
         height: 40px
@@ -92,7 +92,7 @@
 
   #field
     +size(698px, 455px)
-    background-image: url("../images/escalacao-selecao/start/field.png")
+    background-image: url("#{$image-path}escalacao-selecao/start/field.png")
     background-repeat: no-repeat
     position: absolute
     top: 158px
@@ -101,7 +101,7 @@
       +square(90px)
       +single-transition(all, .3s, linear)
       +topLeft(100px, 150px)
-      background-image: url("../images/escalacao-selecao/start/avatar.png")
+      background-image: url("#{$image-path}escalacao-selecao/start/avatar.png")
       list-style: none
       position: absolute
       cursor: pointer
@@ -267,7 +267,7 @@
 
   #coach
     +size(847px, 626px)
-    background-image: url("../images/escalacao-selecao/start/coach.png")
+    background-image: url("#{$image-path}escalacao-selecao/start/coach.png")
     background-repeat: no-repeat
     position: absolute
     top: 20px
@@ -319,7 +319,7 @@
     right: 15px
     z-index: 3
     display: block
-    background-image: url("../images/escalacao-selecao/all/social.png")
+    background-image: url("#{$image-path}escalacao-selecao/all/social.png")
     opacity: 0
     h5
       line-height: 33px

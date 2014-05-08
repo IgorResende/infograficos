@@ -4,6 +4,23 @@ html
   overflow-x: hidden
   height: 100%
 
+  footer.main-footer .social-links li a.google-link
+    background-image: url("#{$image-path}espn/google.png")
+  footer.main-footer .social-links li a.facebook-link
+    background-image: url("#{$image-path}espn/facebook.png")
+  footer.main-footer .social-links li a.rss-link
+    background-image: url("#{$image-path}espn/rss.png")
+  footer.main-footer .social-links li a.twitter-link
+    background-image: url("#{$image-path}espn/twitter.png")
+
+  footer.main-footer a
+    text-decoration: none
+
+
+html.no-touch #main_header ~ main[role="main"]
+  margin-top: 90px !important
+
+
 body
   +font-smoothing(antialiased)
   background-color: $color-green
@@ -18,7 +35,7 @@ button, a
   outline: 0
 
 #infographic
-  background-image: url("../images/escalacao-selecao/all/bg-all.jpg")
+  background-image: url("#{$image-path}escalacao-selecao/all/bg-all.jpg")
   background-position: center top
   background-repeat: no-repeat
   width: 100%
