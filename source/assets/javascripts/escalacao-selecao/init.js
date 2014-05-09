@@ -4,8 +4,8 @@ var infografico = (function() {
 
   var playerSelected = null;
   var playerTypeSelected = null;
-  var imagePath: 'http://content.espn.com.br/infograficos/escalacao-selecao/assets/images/'
-  // var imagePath: 'http://0.0.0.0:4567/assets/images/'
+  // var imagePath = 'http://content.espn.com.br/infograficos/escalacao-selecao/assets/images/';
+  var imagePath = '/assets/images/'
 
   var schemaSelected = '4-3-3';
 
@@ -180,7 +180,7 @@ var infografico = (function() {
         name: 'Willian',
         games: 5,
         goals: 1,
-        image: 'william',
+        image: 'willian',
         link: 'http://www.espn.com.br/noticia/408667_willian'
       },
     },
@@ -246,7 +246,7 @@ var infografico = (function() {
         $('#field').attr('class', 'schema-' + schemaSelected );
         _.each( userChoice.players , function(typePlayer, index){
           var player = typePlayer.split('-');
-          var image = normalize( players[player[0]][player[1]].name ).toLowerCase();
+          var image = players[player[0]][player[1]].image;
           $('#player'+index)
             .addClass('point-selected')
             .html('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[player[0]][player[1]].name + '</span>')
@@ -365,7 +365,7 @@ var infografico = (function() {
         userChoice.players[ $pointActive.data('point') ] = playerTypeSelected + '-' + playerSelected;
         $('#players').velocity({ opacity: 0 }, { duration: 400, display: 'none'});
         $pointActive.addClass('point-selected');
-        var image = normalize(players[playerTypeSelected][playerSelected].name).toLowerCase();
+        var image = players[playerTypeSelected][playerSelected].image;
         $pointActive.html('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_small/' + image + '.png"><span class="avatar-name">' + players[playerTypeSelected][playerSelected].name + '</span>')
         playerSelected = null;
         playerTypeSelected = null;
@@ -394,7 +394,7 @@ var infografico = (function() {
       var htmlList = '';
       for (var i = 0; i <= sizeList; i++) {
         if (disponiblePlayers.hasOwnProperty(i)) {
-          var image = normalize(disponiblePlayers[i].name).toLowerCase();
+          var image = disponiblePlayers[i].image;
           var alreadyChosen = _.contains(userChoice.players, playerType+'-'+i);
           htmlList += ''+
            '<li class="item-1-' + sizeList + ' ' + (alreadyChosen ? 'disabled': '' ) + '">'+
