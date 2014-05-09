@@ -28,7 +28,7 @@ var infografico = (function() {
   };
 
   var userChoice = {
-    schema: '4-2-3-1',
+    schema: '4-3-3',
     players: {
       1: null,
       2: null,
@@ -236,7 +236,7 @@ var infografico = (function() {
   }
 
   function loadUserTeam () {
-    var hash = window.location.search.replace('?', '');
+    var hash =  window.location.search.replace('?', '').replace("%3D","=");//.split('=')[0] ;
     if( hash != '' ){
       $('#desc').text('Agora que você já viu a escalação do seu amigo(a), monte e compartilhe a sua!');
       $('#share-team-area').css('top', 236)
@@ -286,7 +286,7 @@ var infografico = (function() {
 
   function shareTt (a) {
     $('.share-tt').on('click',function(event) {
-      $(this).attr('href', 'https://twitter.com/intent/tweet?' + 'hashtags=espn&text=' + encodeURIComponent('Prendemos o Felipão e agora você é o técnico.') + '&url=' + encodeURIComponent(window.location.href) )
+      $(this).attr('href', 'https://twitter.com/intent/tweet?' + 'hashtags=espn&text=' + encodeURIComponent('Prendemos o Felipão e agora você é o técnico.') + '&url=' + encodeURIComponent(window.location.href.split('?')[0]) )
       gaEvents(1, { rede: 'Twitter', url: window.location.href, secao: 'Social buttons'});
     });
   }
@@ -305,7 +305,7 @@ var infografico = (function() {
       var hashSchema = encode(false, JSON.stringify(userChoice))
       FB.ui({
         method: 'feed',
-        link: (window.location.href + '?' + hashSchema),
+        link: (window.location.href.split('?')[0] + '?' + hashSchema),
         picture: 'http://espnbr.github.io/infograficos/assets/images/escalacao-selecao/share/schema.png',
         name: 'ESPN: Escale sua seleção!',
         caption: 'ESPN: Escale sua seleção!',
@@ -318,7 +318,7 @@ var infografico = (function() {
       gaEvents('Facebook', window.location.href, 'Social buttons')
       FB.ui({
         method: 'feed',
-        link: window.location.href,
+        link: window.location.href.split('?')[0],
         picture: 'http://espnbr.github.io/infograficos/assets/images/escalacao-selecao/share/page.png',
         name: 'ESPN: Escale sua seleção!',
         caption: 'ESPN: Escale sua seleção!',
@@ -476,9 +476,9 @@ var infografico = (function() {
         moved = true;
         schemaActual++;
       }
+      userChoice.schema = $optionsLi.eq(schemaActual).find('a').attr('href').replace('#schema-', '');
+      schemaSelected = userChoice.schema;
       if(moved){
-        userChoice.schema = $optionsLi.eq(schemaActual).find('a').attr('href').replace('#schema-', '');
-        schemaSelected = userChoice.schema;
         gaEvents(3);
         $('.player').removeClass('point-selected').empty();
         $.each(userChoice.players, function (i, p) {
