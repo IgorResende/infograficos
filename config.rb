@@ -63,6 +63,15 @@ activate :gzip
 # activate :imageoptim
 set :relative_links, true
 
+set :imagePath, 'http://content.espn.com.br/infograficos/escalacao-selecao/assets/images/'
+
+configure :development do
+  set :imagePath, 'http://0.0.0.0:4567/assets/images/'
+end
+# if ENV["development"] == "development"
+#   set :imagePath, 'http://0.0.0.0:4567/assets/imagesAAA/'
+# end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
