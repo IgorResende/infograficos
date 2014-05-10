@@ -233,6 +233,18 @@ var infografico = (function() {
     keyboardNav();
     shareFb();
     shareTt();
+    preloadPlayers();
+  }
+
+  function preloadPlayers (argument) {
+    $('#infographic').append('<div id="preloadPlayers"></div>');
+    var $preloadPlayers = $('#preloadPlayers');
+    _.each( players, function (playerType, index, list) {
+      _.each(playerType, function function_name (player) {
+        $preloadPlayers.append('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_big/' + player.image + '.png">');
+        $preloadPlayers.append('<img src="' + imagePath + 'escalacao-selecao/players/jogadores_small/' + player.image + '.png">');
+      })
+    });
   }
 
   function loadUserTeam () {
