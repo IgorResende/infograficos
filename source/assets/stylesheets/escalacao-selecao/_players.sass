@@ -10,11 +10,14 @@
 
   #players-title
     position: absolute
-    top: 32px
     left: 0
     width: 100%
     height: 70px
     text-align: center
+    @media (min-width: $mwMobile)
+      top: 32px
+    @media (max-width: $mwMobile)
+      top: 15px
     #player-position
       font-size: 36px
       font-weight: 600
@@ -48,6 +51,10 @@
     width: 100%
     height: 80px
     text-align: center
+    @media (min-width: $mwMobile)
+      top: 486px
+    @media (max-width: $mwMobile)
+      top: 621px
     #backField
       +single-transition(all, .4s, ease)
       position: absolute
@@ -95,18 +102,30 @@
     top: 37px
     left: 0
     width: 100%
+    @media (min-width: $mwMobile)
+      top: 37px
+    @media (max-width: $mwMobile)
+      top: 90px
     ul
       text-align: center
-      width: 1200px
-      height: 420px
+      @media (min-width: $mwMobile)
+        width: 1200px
+        height: 420px
+      @media (max-width: $mwMobile)
+        width: 100%
+        height: 500px
 
     li
-      // +size(172px, 193px)
-      height: 420px
-      // outline: 1px solid red
-      display: inline-block
       position: relative
+      @media (min-width: $mwMobile)
+        display: inline-block
+      @media (max-width: $mwMobile)
+        display: block
       z-index: 1
+      @media (min-width: $mwMobile)
+        height: 420px
+      @media (max-width: $mwMobile)
+        height: 120px
       &.disabled
         +filter(grayscale,100%)
         opacity: .8
@@ -114,124 +133,198 @@
         z-index: 2
       &:hover
         z-index: 3
-      &:hover, &.selected
-        .img-player
-          +transform(scale(1.4))
-          .circle
-            border-color: $color-yellow
+      @media (max-width: $mwMobile)
+        $quant: 10
+        @for $i from 1 through $quant
+          &.item-1-#{$i}
+            height: (500px - (10px * $i) ) / $i
+            margin-bottom: 10px
+            .name-player
+              line-height: 500px / $i
+            .tooltip-info
+              b
+                font-size: 23px - ($i*2)
+                line-height: 23px - ($i*2)
+              span
+                font-size: 16px - ($i)
+                line-height: 16px - ($i)
+
+        &:hover, &.selected
           .name-player
-            margin-top: -22px
-          .tooltip-info
-            +transform(scale(.70))
-            opacity: 1
-            margin-top: -10px
-            display: block
-
-      $quant: 10
-      @for $i from 1 through $quant
-        &.item-1-#{$i}
-          width: 1100px / $i
+            background-color: $color-yellow
+            color: $color-green !important
+        .img-player
+          height: 100%
           .circle-container
-            top: 100px - (10px * $i)
-          $half: floor($i / 2)
-          @for $ii from 0 through ($half)
-            &:nth-child(#{$ii + 1}), &:nth-child(#{ $i - $ii  })
-              padding-top: 35px * $ii
-              .img-player
-                top: 35px * $ii
-
-      .img-player
-        +single-transition(all, .4s, ease)
-        // +size(172px, 193px)
-        // +size(100%, 193px)
-        width: 100%
-        cursor: pointer
-        // background-image: url("#{$image-path}escalacao-selecao/players/demo.png")
-        // background-size: contain
-        // background-repeat: no-repeat
-        // background-position: center
-        // background-color: #FFF
-        position: absolute
-        img
-          max-width: 172px
-          display: block
-          margin: 0 auto
-          width: 100%
-          position: relative
-          z-index: 2
-        .circle-container
-          width: 100%
-          position: absolute
-          left: 0
-          overflow: hidden
-          // outline: 1px solid red
-          z-index: 1
-        .circle
-          +circle(100px)
-          +single-transition(all, 1s, ease)
-          margin: 0 auto
-          background-color: #008f46
-          // position: absolute
-          border: 10px solid #017138
-      .name-player
-        +single-transition(all, .6s, ease)
-        text-transform: uppercase
-        color: $color-yellow
-        font-size: 18px
-        line-height: 22px
-        text-align: center
-      .tooltip-info
-        +size(230px, 135px)
-        +single-transition(all, .6s, ease)
-        background-image: url("#{$image-path}escalacao-selecao/players/tooltip-info.png")
-        background-repeat: no-repeat
-        background-position: 0 0
-        position: relative
-        font-weight: bold
-        opacity: 0
-        margin: 0 auto
-        margin-top: 50px
-        display: none
-        div
-          text-transform: uppercase
-          position: absolute
-          width: 100%
-          b
-            font-size: 38px
-            line-height: 40px
-            height: 40px
-            display: block
-            color: $color-green
-          span
-            display: block
-            color: #999
-            font-size: 11px
-            text-align: center
-            margin-top: 3px
-            line-height: 13px
-          &.tooltip-info-name
-            color: $color-green
-            font-size: 18px
-            top: 21px
-            left: 0
-          &.tooltip-info-games
-            top: 47px
-            left: 10px
-            width: 95px
-          &.tooltip-info-goals
-            top: 47px
-            right: 10px
-            width: 95px
-          &.tooltip-info-more
+            .circle
+          img
+            height: 100%
             position: absolute
-            top: 120px
-            left: 0
+            left: 15px
+            z-index: 2
+          .name-player
+            +single-transition(all, .4s, ease)
+            z-index: 1
+            position: absolute
+            top: 0
+            left: 23%
+            height: 100%
+            width: 70%
+            color: $color-yellow
+            text-transform: uppercase
+            font-size: 18px
+            padding-left: 10%
+            text-align: left
+          .tooltip-info
+            +border-radius(5px)
             background-color: #fff
-            line-height: 30px
-            font-size: 11px
-            border-radius: 4px
-            a
+            position: absolute
+            top: 0
+            right: 15px
+            height: 100%
+            width: 40%
+            z-index: 2
+            text-align: center
+            b
+              display: inline-block
+              width: 100%
               color: $color-green
-              text-decoration: none
-              &:hover
-                text-decoration: underline
+            span
+              display: inline-block
+              width: 100%
+              color: #ccc
+              text-transform: uppercase
+            .tooltip-info-name
+              display: none
+            .tooltip-info-games
+              height: 40%
+              width: 90%
+              margin: 0 auto
+              border-bottom: 1px solid #ddd
+              padding: 3px 0
+            .tooltip-info-goals
+              height: 34%
+              width: 90%
+              margin: 3px auto
+              padding: 0
+              border-bottom: 1px solid #ddd
+            .tooltip-info-more
+              a
+                text-transform: uppercase
+                color: $color-green
+                font-size: 11px
+      @media (min-width: $mwMobile)
+        &:hover, &.selected
+          .img-player
+            +transform(scale(1.4))
+            .circle
+              border-color: $color-yellow
+            .name-player
+              margin-top: -22px
+            .tooltip-info
+              +transform(scale(.70))
+              opacity: 1
+              margin-top: -10px
+              display: block
+
+        $quant: 10
+        @for $i from 1 through $quant
+          &.item-1-#{$i}
+            width: 1100px / $i
+            .circle-container
+              top: 100px - (10px * $i)
+            $half: floor($i / 2)
+            @for $ii from 0 through ($half)
+              &:nth-child(#{$ii + 1}), &:nth-child(#{ $i - $ii  })
+                padding-top: 35px * $ii
+                .img-player
+                  top: 35px * $ii
+
+        .img-player
+          +single-transition(all, .4s, ease)
+          width: 100%
+          cursor: pointer
+          position: absolute
+          img
+            max-width: 172px
+            display: block
+            margin: 0 auto
+            width: 100%
+            position: relative
+            z-index: 2
+          .circle-container
+            width: 100%
+            position: absolute
+            left: 0
+            overflow: hidden
+            // outline: 1px solid red
+            z-index: 1
+          .circle
+            +circle(100px)
+            +single-transition(all, 1s, ease)
+            margin: 0 auto
+            background-color: #008f46
+            // position: absolute
+            border: 10px solid #017138
+        .name-player
+          +single-transition(all, .6s, ease)
+          text-transform: uppercase
+          color: $color-yellow
+          font-size: 18px
+          line-height: 22px
+          text-align: center
+        .tooltip-info
+          +size(230px, 135px)
+          +single-transition(all, .6s, ease)
+          background-image: url("#{$image-path}escalacao-selecao/players/tooltip-info.png")
+          background-repeat: no-repeat
+          background-position: 0 0
+          position: relative
+          font-weight: bold
+          opacity: 0
+          margin: 0 auto
+          margin-top: 50px
+          display: none
+          div
+            text-transform: uppercase
+            position: absolute
+            width: 100%
+            b
+              font-size: 38px
+              line-height: 40px
+              height: 40px
+              display: block
+              color: $color-green
+            span
+              display: block
+              color: #999
+              font-size: 11px
+              text-align: center
+              margin-top: 3px
+              line-height: 13px
+            &.tooltip-info-name
+              color: $color-green
+              font-size: 18px
+              top: 21px
+              left: 0
+            &.tooltip-info-games
+              top: 47px
+              left: 10px
+              width: 95px
+            &.tooltip-info-goals
+              top: 47px
+              right: 10px
+              width: 95px
+            &.tooltip-info-more
+              position: absolute
+              top: 120px
+              left: 0
+              background-color: #fff
+              line-height: 30px
+              font-size: 11px
+              border-radius: 4px
+              a
+                color: $color-green
+                text-decoration: none
+                &:hover
+                  text-decoration: underline
