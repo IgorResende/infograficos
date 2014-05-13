@@ -59,7 +59,7 @@ body
 
 .all-back
   background-color: transparent
-  background-image: url("../images/arena-corinthians/all/back.png")
+  background-image: url("../images/arena-corinthians/all/previous.png")
   background-position: 10px 10px
   background-repeat: no-repeat
   border: none
@@ -75,7 +75,58 @@ body
   text-align: left
   text-transform: uppercase
   top: 590px
-  width: 120px
+  width: 160px
+  color: #fff
+  &.dark
+    color: $color-black
+
+.all-home
+  +size(100px, 60px)
+  +single-transition(opacity, .2s, linear)
+  background-color: transparent
+  background-image: url("../images/arena-corinthians/all/home.png")
+  background-position: top center
+  background-repeat: no-repeat
+  border: none
+  cursor: pointer
+  font-family: Museo300Regular
+  font-size: 18px
+  font-weight: bold
+  height: 90px
+  left: calc(50%  - 50px )
+  line-height: 110px
+  padding-left: 36px
+  position: absolute
+  text-align: left
+  text-transform: uppercase
+  top: 610px
+  width: 160px
+  color: #fff
+  opacity: .8
+  &:hover
+    opacity: 1
+  &.dark
+    color: $color-black
+
+.all-next
+  background-color: transparent
+  background-image: url("../images/arena-corinthians/all/next.png")
+  background-position: right 10px
+  background-repeat: no-repeat
+  border: none
+  cursor: pointer
+  font-family: Museo300Regular
+  font-size: 18px
+  font-weight: bold
+  height: 60px
+  right: 5px
+  line-height: 60px
+  padding-left: 36px
+  position: absolute
+  text-align: left
+  text-transform: uppercase
+  top: 590px
+  width: 150px
   color: #fff
   &.dark
     color: $color-black
