@@ -1,6 +1,8 @@
 # Geral
 all:
-  back: "Voltar"
+  back: "Anterior"
+  home: "Início"
+  next: "Próximo"
   share: "Compartilhe"
 
 # Início
@@ -352,6 +354,23 @@ field:
 vote:
   title: "Dê sua nota"
   desc: "Qual nota você dá para o Itaqueirão?"
+
+bleachers:
+  title: "Arquibancadas"
+  desc: "desc arquibancadas"
+
+coverage:
+  title: "Cobertura"
+  desc: "desc cobertura"
+
+cabins:
+  title: "Camarotes"
+  desc: "desc camarotes"
+
+parking:
+  title: "Estacionamento"
+  desc: "desc estacionamento"
+
 
 
 
