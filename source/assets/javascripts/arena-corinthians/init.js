@@ -2,12 +2,32 @@
 var infografico = (function() {
   'use strict';
 
+  var sectionSequence = [
+    'start',
+    'west_building',
+    'east_building',
+    'field',
+    'bleachers',
+    'coverage',
+    'cabins',
+    'screen',
+    'lockers',
+    'parking',
+    'numbers',
+    'about',
+    'controversies',
+    'curiosities',
+    'comparative',
+    'vote'
+  ]
+
   var openSection = '';
 
   function init() {
     jQuery.fn.reverse = [].reverse;
     bindMenuAnimation();
-    bindBack();
+    bindHome();
+    bindPrevNext();
     start(true);
     $('#share').velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
     ratingVote();
@@ -36,13 +56,29 @@ var infografico = (function() {
     });
   }
 
-  function bindBack () {
-    $('.all-back').on('click', function (evt) {
+  function bindHome () {
+    $('.all-home').on('click', function (evt) {
       evt.preventDefault();
       evt.stopPropagation();
       $('#share').velocity({ opacity: 0 }, { duration: 200, delay: 0 });
       eval(openSection + '(false)');
       start(true);
+    });
+  }
+
+  function bindPrevNext () {
+    $('.all-back, .all-next').on('click', function (evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      var ind = _.indexOf( sectionSequence , openSection );
+      if( $(this).hasClass('all-back') ){
+        ind -= 1;
+      } else {
+        ind += 1;
+      }
+      $('#share').velocity({ opacity: 0 }, { duration: 200, delay: 0 });
+      eval(openSection + '(false)');
+      eval(  sectionSequence[ ind ]  + '(true)');
     });
   }
 
@@ -86,6 +122,58 @@ var infografico = (function() {
       $numbersInfo.velocity({ opacity: 0, marginLeft: -1000 }, { duration: 500 });
       $title.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
       $numbers.delay(400).velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none" });
+    }
+  }
+
+  function bleachers (enter) {
+    var $bleachers = $('#bleachers');
+    var $title = $('.title', $bleachers);
+    if(enter){
+      $bleachers.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
+      $title.velocity({ opacity: 1 }, { duration: 1000, delay: 1200 });
+      openSection = 'bleachers';
+    } else {
+      $title.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
+      $bleachers.delay(400).velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none" });
+    }
+  }
+
+  function coverage (enter) {
+    var $coverage = $('#coverage');
+    var $title = $('.title', $coverage);
+    if(enter){
+      $coverage.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
+      $title.velocity({ opacity: 1 }, { duration: 1000, delay: 1200 });
+      openSection = 'coverage';
+    } else {
+      $title.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
+      $coverage.delay(400).velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none" });
+    }
+  }
+
+  function cabins (enter) {
+    var $cabins = $('#cabins');
+    var $title = $('.title', $cabins);
+    if(enter){
+      $cabins.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
+      $title.velocity({ opacity: 1 }, { duration: 1000, delay: 1200 });
+      openSection = 'cabins';
+    } else {
+      $title.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
+      $cabins.delay(400).velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none" });
+    }
+  }
+
+  function parking (enter) {
+    var $parking = $('#parking');
+    var $title = $('.title', $parking);
+    if(enter){
+      $parking.velocity({ opacity: 1, top: 0 }, { duration: 1000, display: "block" });
+      $title.velocity({ opacity: 1 }, { duration: 1000, delay: 1200 });
+      openSection = 'parking';
+    } else {
+      $title.velocity({ opacity: 0 }, { duration: 500, delay: 0 });
+      $parking.delay(400).velocity({ opacity: 0, top: 700 }, { duration: 1000, display: "none" });
     }
   }
 
