@@ -31,6 +31,25 @@ var infografico = (function() {
     start(true);
     $('#share').velocity({ opacity: 1 }, { duration: 500, delay: 1500 });
     ratingVote();
+    keyboardNav();
+  }
+
+  function keyboardNav() {
+    $(document).keydown(function(e){
+      // left
+      if (e.keyCode == 37) {
+        $('.all-back', '#' + openSection).trigger('click');
+      }
+      // left
+      if (e.keyCode == 38) {
+        $('.all-home', '#' + openSection).trigger('click');
+        return false;
+      }
+      // right
+      if (e.keyCode == 39) {
+        $('.all-next', '#' + openSection).trigger('click');
+      }
+    });
   }
 
   function ratingVote () {
