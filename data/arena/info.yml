@@ -43,50 +43,50 @@ start:
 #  Prédio leste
 east_building:
   title: "O prédio leste"
-  desc: "Conheça o interior do prédio leste do estádio"
+  desc: "O lado mais populoso e da ‘classe média’ corintiana"
   infos:
     -
-      title: "1. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "1. Local de acidente"
+      desc: "Queda do guindaste que matou dois funcionários em 2013 aconteceu justamente na cobertura do lado leste"
     -
-      title: "2. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "2. Setor intermediário"
+      desc: "É o lado do estádio que tem ingressos de preços intermediários. As arquibancadas superiores são mais baratas que as inferiores."
     -
-      title: "3. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "3. Maior público"
+      desc: "É o prédio mais populoso, onde cabe mais gente. O Corinthians ainda não sabe informar o número exato de lugares"
     -
-      title: "4. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "4. Telão de LED"
+      desc: "Com 170 x 22m de comprimento, o maior telão do mundo fica na fachada leste e deve passar lances de jogo, torcida e publicidades"
     -
-      title: "5. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "5. Estacionamento"
+      desc: "Estacionamento externo dedicado para torcedores que compraram ingressos para um único jogo, com 1620 vagas"
     -
-      title: "6. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "6. Publicidade"
+      desc: "É na arquibancada que ficará estampado o nome do patrocinador do estádio, os famosos naming rights, ainda não negociados"
 
 # Prédio Oeste
 west_building:
   title: "O prédio oeste"
-  desc: "Conheça o interior do prédio oeste do estádio"
+  desc: "O lado VIP e mais rentável do estádio corintiano"
   infos:
     -
-      title: "1. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "1. Dinheiro"
+      desc: "O lado oeste é visto como o setor ”rico”. O clube espera arrecadar R$ 200 milhões anuais com cativas, festas e camarotes"
     -
-      title: "2. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "2. Camarotes"
+      desc: "Serão 89 camarotes no local, alguns deles com direito a elevador que sai do estacionamento e cai direto no camarote"
     -
-      title: "3. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "3. Festas"
+      desc: "Além dos camarotes, alguns setores serão reservados para casamentos, aniversários e eventos, que podem ocorrer nos dias de jogos"
     -
-      title: "4. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "4. Hall de entrada"
+      desc: "Entrada principal do estádio é pelo lado oeste, com direito a escadas rolantes e elevadores para os andares superiores"
     -
-      title: "5. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "5. Lojas"
+      desc: "Uma gigante loja oficial do Corinthians é destaque no setor, que ainda tem mais 58 lojas que serão licenciadas"
     -
-      title: "6. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      title: "6. Restaurante"
+      desc: "Um grande restaurante também ocupa o setor, com direito a atendimento por celular e telões para que ninguém perca nada do jogo"
 
 # Vestiários
 lockers:
@@ -94,14 +94,14 @@ lockers:
   desc: ""
   details:
     -
-      title: "1. Cobertura"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+      title: "1. Espaço"
+      desc: "São quatro vestiários no complexo: o do Corinthians, o mais luxuoso e exclusivo do clube e da seleção brasileira, o do visitante e mais dois vestiários adjuntos"
     -
-      title: "2. Outro detalhe"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+      title: "2. Com público"
+      desc: "Vestiário do Corinthians tem área de aquecimento com espaço para mais de 80 torcedores assistirem aos jogadores de perto. Área não será usada na Copa"
     -
-      title: "2. Mais um detalhe"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos."
+      title: "2. Preto e branco"
+      desc: "Os vestiários da Arena são de duas cores. Do lado que será utilizado pelo Corinthians, tudo é preto. Do outro, tudo branco"
   nav:
     prev: "Anterior"
     next: "Próxima"
@@ -121,17 +121,17 @@ screen:
   title: "O telão"
   desc: ""
   subtitle: "Um pequeno grande detalhe"
-  desc2: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite todo o nosso limite de caracteres estipulado.. "
+  desc2: "Apesar de ser um dos maiores destaques do estádio, telão ainda precisa ser aprovado pela Prefeitura por conta da Lei Cidade Limpa, que que ele é visível para quem está fora do estádio."
   infos:
     -
-      title: "3580 leds"
-      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
+      title: "Maior do mundo"
+      desc: "Com 170m de largura por 20m de altura, é considerado o maior do mundo"
+    -
+      title: "Interativo"
+      desc: "Telão pode ter até competições de videogame com torcedores antes de jogos"
     -
       title: "3580 leds"
-      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
-    -
-      title: "3580 leds"
-      desc: "compôes a extensão do painel que mede cerca de 180x20 metros."
+      desc: "Compôe a extensão do painel que ocupa toda a fachada lesta"
 
 # Comparativo
 comparative:
@@ -141,40 +141,40 @@ comparative:
   table:
     labels:
       info1: "Capacidade"
-      info2: "Custo"
-      info3: "Area Construida"
-      info4: "Tamanho"
+      info2: "Inauguração"
+      info3: "1º jogo"
+      info4: "1º gol"
     data:
       -
         name: "Arena Corinthians"
-        info1: "1"
-        info2: "2"
-        info3: "3"
-        info4: "4"
+        info1: "48 mil (68 mil na Copa)"
+        info2: "Corinthians x FIgueirense"
+        info3: "18/05/2014"
+        info4: "-"
       -
         name: "Pacaembu"
-        info1: "5"
-        info2: "6"
-        info3: "7"
-        info4: "8"
+        info1: "37 mil"
+        info2: "27/04/1940"
+        info3: "Palmeiras 6 x 2 Coritiba"
+        info4: "Zequinha (Coritiba)"
       -
         name: "Maracanã"
-        info1: "9"
-        info2: "10"
-        info3: "11"
-        info4: "12"
+        info1: "78 mil"
+        info2: "16/06/1950"
+        info3: "Seleção RJ 1 x 3 Seleção SP"
+        info4: "Didi (Seleção RJ)"
       -
         name: "Morumbi"
-        info1: "13"
-        info2: "14"
-        info3: "15"
-        info4: "16"
+        info1: "66 mil"
+        info2: "02/10/1960"
+        info3: "São Paulo 1 x 0 Sporting (POR)"
+        info4: "Peixinho"
       -
-        name: "Alianz Arena"
-        info1: "17"
-        info2: "18"
-        info3: "19"
-        info4: "20"
+        name: "Alianz Parque"
+        info1: "43 mil pessoas"
+        info2: "-"
+        info3: "-"
+        info4: "-"
 
 # Sobre a obra
 about:
@@ -182,29 +182,29 @@ about:
   desc: "Alguns detalhes sobre as obras e construção"
   infos:
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Automático"
+      desc: "Estádio não tem interruptores. As luzes acendem e apagam por sensores"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Geometria"
+      desc: "A Fifa questionou a ‘estranha’ geometria da arena e chegou a sugerir mudanças"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Vistas grossas"
+      desc: "Autoridade do Ministério do Trabalho acusou ‘vistas grossas’ em irregularidades"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Provisórias"
+      desc: "Corinthians e Fifa brigam para saber quem paga pelas provisórias. Pior para o Corinthians"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Museu"
+      desc: "Corinthians incluiu museu na obra e quer arrecadar R$ 20 milhões anuais"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Sem espaço"
+      desc: "Por causa das provisórias, o Corinthians não usará telão onde planejava"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Início"
+      desc: "Obras na Arena Corinthians começaram em 20 de maio de 2011"
     -
-      title: "4382"
-      desc: "Homens trabalharam na durante todo o período da obra do estádio."
+      title: "Fim"
+      desc: "Obras para a Copa seguem, e estádio definitivo só fica pronto em 2015"
 
 # Números
 numbers:
@@ -212,59 +212,59 @@ numbers:
   desc: "etc etc"
   infos:
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 820 mi"
+      desc: "valor inicial"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 1,2 bi"
+      desc: "valor final"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 400 mi"
+      desc: "emprestados do BNDES"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 420 mi"
+      desc: "de isenção fiscal"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 100 mi"
+      desc: "de juros"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 110 mi"
+      desc: "de custos extras"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 70 mi"
+      desc: "custos Fifa"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 20 mi"
+      desc: "de custos com museu"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 12 mi"
+      desc: "para retirar dutos"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 400 mi"
+      desc: "pelos naming rights"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 100 mi"
+      desc: "de custos anuais"
     -
-      title: "198.000m"
-      desc: "de área total"
+      title: "R$ 200 mi"
+      desc: "de receitas anuais"
 
 # Polemicas
 controversies:
   title: "Polêmicas"
-  desc: "Entenda os lances mais polêmicos dessa mega obra"
+  desc: "O constante convívio com críticas e polêmicas na Arena"
   infos:
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+      title: "Dinheiro público"
+      desc: "O ponto mais polêmico do estádio. O Corinthians contou com recursos públicos de duas formas: isenção de impostos e empréstimo do BNDES. A dívida deve ser quitada até 2028"
     -
-      title: "Os custos da obra"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+      title: "O alto preço"
+      desc: "Os gastos com o estádio superaram as expectativas. Orçado em R$ 820 milhões, o valor que terá de ser desembolsado já passa de R$ 1 bilhão. Até agora, nada na arena foi vendido"
     -
-      title: "Mais um detalhe"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+      title: "Itaquera x Morumbi"
+      desc: "Muitos dizem que o estádio tricolor, que já estava pronto, deveria receber a Copa. Mas o Morumbi também precisaria de reformas. O Mundial ajudou e atrapalhou na construção"
     -
-      title: "Mais um detalhe"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o nosso limite."
+      title: "Atraso"
+      desc: "O estádio do Corinthians deveria estar pronto até o fim de 2013, com jogos já no começo de 2014. Com dois acidentes fatais, a Arena vai ser entregue em cima da hora e inacabada"
   money:
     title: "De onde veio essa grana?"
     data:
@@ -305,26 +305,26 @@ controversies:
 # Curiosidades
 curiosities:
   title: "Curiosidades"
-  desc: "etc etc"
+  desc: "As histórias por trás das quatro linhas na Arena"
   infos:
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "Kids e mulheres"
+      desc: "O Corinthians vai ter um espaço especial para mulheres e crianças, personalizados, com serviços e entretenimento"
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "O verde"
+      desc: "Fora o gramado – que quase foi preto -, nada é verde. Ou quase nada. Nos banheiros do vestiário, há pastilhas transparentes que ficam esverdeadas com a luz amarela escolhida"
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "Cobertura"
+      desc: "Depois da confirmação da Copa do Mundo, o Corinthians teve de ‘levantar’ o estádio para que tivesse uma altura maior para as estruturas provisórias"
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "Fungos?"
+      desc: "Segundo o arquiteto da obra, as arquibancadas provisórias fazem mal para o gramado. Sem a ventilação planejada, fungos podem se proliferar"
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "Itaquerão"
+      desc: "Andrés Sanchez odeia, mas até os órgãos oficiais chamam o estádio de Itaquerão. As placas de trânsito da Fifa usam “Itaquera Stadium”"
     -
-      title: "Acidentes"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres todos os novos estímulos 3 linhas e respeite o limite."
+      title: "Timão x Timão"
+      desc: "A arena foi inaugurada com um jogo entre Corinthians e Corinthians, com a presença de ex-jogadores. O mesmo aconteceu no evento da Fazendinha."
 
 # Campo
 field:
@@ -333,22 +333,22 @@ field:
   infos:
     -
       title: "Gramado"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "A grama plantada na arena é adequada para climas de inverno, como será na Copa do Mundo. O plantio foi em 12 de junho, um ano antes da Copa"
     -
       title: "Substrato"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "Um substrato bastante permeável de areia segura a grama e, ao mesmo tempo,  garante que a drenagem funcione bem"
     -
       title: "Drenagem"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "O sistema escolhido pelo Corinthians é de drenagem a vácuo, que permite retirar mais de 400 mil litros de água por hora"
     -
       title: "Escoamento"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "Para aproveitar a drenagem potente, um sistema de escoamento permite guardar a água para usá-la posteriormente para irrigação"
     -
       title: "Saibro"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "Uma manta de saibro é colocada para ’abrir’ as camadas do gramado do estádio corintiano"
     -
       title: "Resfriamento"
-      desc: "Um texto falando sobre a cobertura, que ocupe apenas 3 linhas e respeite o nosso limite de caracteres estipulado."
+      desc: "Como a grama é de inverno, há um sistema de resfriamento para os meses de verão. O ar gelado é ‘soprado’ para manter temperatura abaixo dos 23º"
 
 
 vote:
